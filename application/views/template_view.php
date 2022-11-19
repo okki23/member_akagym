@@ -227,7 +227,7 @@
                             <li>
                                 <a href="<?php echo base_url('uom'); ?>">
                                 <i class="material-icons">dns</i>
-                                    <span>UOM</span>
+                                    <span>UOM (Unit of Measurement)</span>
                                 </a>
                         
                                 

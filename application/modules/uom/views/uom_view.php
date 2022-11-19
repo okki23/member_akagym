@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>  
-                                Bank 
+                                UOM (Unit of Measurement) 
                             </h2>
                             <br>
                             <a href="javascript:void(0);" id="addmodal" class="btn btn-primary waves-effect">  <i class="material-icons">add_circle</i>  Tambah Data </a>
@@ -22,7 +22,7 @@
 							   <table class="table table-bordered table-striped table-hover js-basic-example" id="example" >
 									<thead>
 										<tr> 
-											<th style="width:5%;">Bank Name</th>  
+											<th style="width:5%;">UOM Name</th>  
                                             <th style="width:5%;">Status</th>                              
                                             <th style="width:10%;">Opsi</th> 
 										</tr>
@@ -55,17 +55,17 @@
 
                                 	<div class="form-group">
                                         <div class="form-line">
-                                            <label for=""> Bank Name </label>
-                                            <input type="text" name="bank_name" id="bank_name" class="form-control" placeholder="Bank Name" />
+                                            <label for=""> UOM Name </label>
+                                            <input type="text" name="unit_code" id="unit_code" class="form-control" placeholder="UOM Name" />
                                         </div>
                                     </div> 
 
 
                                     <div class="form-group">
                                     
-                                        <label> Bank Status  </label>
+                                        <label> Remark  </label>
                                         <br>
-                                        <input type="hidden" name="status" id="status">
+                                        <input type="hidden" name="remark" id="remark">
 
                                         <button type="button" id="aktifbtn" class="btn btn-default waves-effect "> Aktif </button>
 
@@ -88,13 +88,13 @@
    <script type="text/javascript"> 
      
      $("#aktifbtn").on("click",function(){
-        $("#status").val('1');
+        $("#remark").val('1');
         $(this).attr('class','btn btn-primary');
         $("#naktifbtn").attr('class','btn btn-default'); 
     });
 
     $("#naktifbtn").on("click",function(){
-        $("#status").val('2');
+        $("#remark").val('2');
         $(this).attr('class','btn btn-primary');
         $("#aktifbtn").attr('class','btn btn-default'); 
     });
@@ -104,15 +104,15 @@
 		$("#defaultModal").modal('show');
  
 		$.ajax({
-			 url:"<?php echo base_url(); ?>bank/get_data_edit/"+id,
+			 url:"<?php echo base_url(); ?>uom/get_data_edit/"+id,
 			 type:"GET",
 			 dataType:"JSON", 
 			 success:function(result){  
 				 $("#defaultModal").modal('show'); 
 				 $("#id").val(result.id);
-                 $("#bank_name").val(result.bank_name); 
-                 $("#level").val(result.level); 
-                 if(result.status == '1'){
+                 $("#unit_code").val(result.unit_code); 
+                 $("#remark").val(result.remark); 
+                 if(result.remark == '1'){
                     $("#aktifbtn").attr('class','btn btn-primary');
                     $("#naktifbtn").attr('class','btn btn-default');
                  }else{
@@ -133,7 +133,7 @@
         {
         // ajax delete data to database
         $.ajax({
-            url : "<?php echo base_url('bank/hapus_data')?>/"+id,
+            url : "<?php echo base_url('uom/hapus_data')?>/"+id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -167,7 +167,7 @@
  
                  //transaksi dibelakang layar
                  $.ajax({
-                 url:"<?php echo base_url(); ?>bank/simpan_data",
+                 url:"<?php echo base_url(); ?>uom/simpan_data",
                  type:"POST",
                  data:formData,
                  contentType:false,  
@@ -209,7 +209,7 @@
     
 		  
             $('#example').DataTable({ 
-                "ajax": "<?php echo base_url(); ?>bank/fetch_bank" 
+                "ajax": "<?php echo base_url(); ?>uom/fetch_uom" 
             });
  
 		 

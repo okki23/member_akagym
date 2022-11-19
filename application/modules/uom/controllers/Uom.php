@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Bank extends Parent_Controller {
+class Uom extends Parent_Controller {
 	 
-  var $nama_tabel = 'm_bank';
-  var $daftar_field = array('id','bank_name','status');
+  var $nama_tabel = 'm_item_unit';
+  var $daftar_field = array('id','unit_code','remark');
   var $primary_key = 'id'; 
  
 
  	public function __construct(){
  		parent::__construct();
- 		$this->load->model('m_bank'); 
+ 		$this->load->model('m_uom'); 
 		if(!$this->session->userdata('username')){
 		   echo "<script language=javascript>
 				 alert('Anda tidak berhak mengakses halaman ini!');
@@ -21,13 +21,13 @@ class Bank extends Parent_Controller {
  
   	public function index(){
   		$data['judul'] = $this->data['judul']; 
-  		$data['konten'] = 'bank/bank_view';
+  		$data['konten'] = 'uom/uom_view';
   		$this->load->view('template_view',$data);		
      
   	} 
  
-  	public function fetch_bank(){  
-       $getdata = $this->m_bank->fetch_bank();
+  	public function fetch_uom(){  
+       $getdata = $this->m_uom->fetch_uom();
        echo json_encode($getdata);   
 	}
  
@@ -41,7 +41,7 @@ class Bank extends Parent_Controller {
 	public function hapus_data(){
 		$id = $this->uri->segment(3);  
 	 
-   		$sqlhapus = $this->m_bank->hapus_data($id);
+   		$sqlhapus = $this->m_uom->hapus_data($id);
 		
 		if($sqlhapus){
 			$result = array("response"=>array('message'=>'success'));
@@ -54,11 +54,11 @@ class Bank extends Parent_Controller {
 	 
 	public function simpan_data(){ 
     
-		$data_form = $this->m_bank->array_from_post($this->daftar_field);
+		$data_form = $this->m_uom->array_from_post($this->daftar_field);
 
 		$id = isset($data_form['id']) ? $data_form['id'] : NULL;  
 
-    	$simpan_data = $this->m_bank->simpan_data($data_form,$this->nama_tabel,$this->primary_key,$id);
+    	$simpan_data = $this->m_uom->simpan_data($data_form,$this->nama_tabel,$this->primary_key,$id);
  
 		if($simpan_data){
 			$result = array("response"=>array('message'=>'success'));
