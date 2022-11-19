@@ -152,11 +152,9 @@
             <!-- Menu -->
             <div class="menu">
                 
-            <?php
-           
-            if($this->session->userdata('level') == 1){
-            ?>
+             
                 <ul class="list">
+
                     <li>
                         <a href="<?php echo base_url('dashboard'); ?>">
                             <i class="material-icons">home</i>
@@ -170,52 +168,71 @@
                             <span>Master</span>
                         </a>
                         <ul class="ml-menu">
-                    <li>
-                        <a href="<?php echo base_url('sales'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Sales</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="<?php echo base_url('trainer'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Trainer</span>
-                        </a>
-                    </li>  
-                    <li>
-                        <a href="<?php echo base_url('instansi'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Instansi</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="<?php echo base_url('materi'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Materi</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="<?php echo base_url('room'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Room</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="<?php echo base_url('kategori_training'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>Kategori Training</span>
-                        </a>
-                    </li>  
-                    <li>
-                        <a href="<?php echo base_url('user'); ?>">
-                           <i class="material-icons">dns</i>
-                            <span>User Account</span>
-                        </a>
-                    </li> 
-                       
-                        </ul>
-                    </li>
+                            <li>
+                                <a href="<?php echo base_url('sales'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Member</span>
+                                </a>
+                            </li> 
 
+                            <li>
+                                <a href="<?php echo base_url('trainer'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Pegawai</span>
+                                </a>
+                            </li>  
+
+                            <li>
+                                <a href="<?php echo base_url('instansi'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Instruktur</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('bank'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Bank</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('room'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Payment Type</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('kategori_training'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Group Package</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('user'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Paket Service</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('user'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Member Type</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('user'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Category Name</span>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('uom'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>UOM</span>
+                                </a>
+                        
+                                
+                            </li> 
+                        </ul>
                  
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -226,83 +243,37 @@
                             <li>
                                 <a href="<?php echo base_url('work_order'); ?>">
                                 <i class="material-icons">dns</i>
-                                    <span>Work Order</span>
+                                    <span>Point Of Sale</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('work_order'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Closing Transaksi</span>
                                 </a>
                             </li>  
                         </ul>
                     </li> 
-                </ul>
 
-            <?php 
-            }else if($this->session->userdata('level') == 2){
-            ?>
-
-                <ul class="list">
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">dns</i>
-                            <span>Transaksi</span>
+                            <span>Report</span>
                         </a>
                         <ul class="ml-menu"> 
                             <li>
                                 <a href="<?php echo base_url('work_order'); ?>">
                                 <i class="material-icons">dns</i>
-                                    <span>Work Order</span>
+                                    <span>Cetak Closing Transaksi</span>
                                 </a>
                             </li>  
                         </ul>
                     </li> 
                 </ul>
-
-            <?php 
-            }else if($this->session->userdata('level') == 3 || $this->session->userdata('level') == 4){
-            ?>
-                <ul class="list">
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">dns</i>
-                            <span>Transaksi</span>
-                        </a>
-                        <ul class="ml-menu"> 
-                            <li>
-                                <a href="<?php echo base_url('work_order'); ?>">
-                                <i class="material-icons">dns</i>
-                                    <span>Work Order</span>
-                                </a>
-                            </li>  
-                        </ul>
-                    </li> 
-                </ul>
-            <?php 
-            }else if($this->session->userdata('level') == 5 || $this->session->userdata('level') == 6){
-            ?>
-                <ul class="list">
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">dns</i>
-                            <span>Transaksi</span>
-                        </a>
-                        <ul class="ml-menu"> 
-                            <li>
-                                <a href="<?php echo base_url('approval_work_order'); ?>">
-                                <i class="material-icons">dns</i>
-                                    <span>Approval Work Order</span>
-                                </a>
-                            </li>  
-                            <!-- <li>
-                                <a href="<?php echo base_url('history_work_order'); ?>">
-                                <i class="material-icons">dns</i>
-                                    <span>History Work Order</span>
-                                </a>
-                            </li>   -->
-                            
-                        </ul>
-                    </li> 
-                </ul>
-            <?php 
-            }
-            ?>
-                
+ 
+            
+            
+            
 				<!--list menu-->
 			    
             </div>
@@ -310,7 +281,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; <a href="javascript:void(0);"> Sciencom
+                    &copy; <a href="javascript:void(0);"> AKAGYM
                 </div>
             </div>
             <!-- #Footer -->

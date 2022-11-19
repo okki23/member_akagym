@@ -12,6 +12,15 @@ if(!function_exists('level_help')){
     }
 }
 
+if(!function_exists('get_status')){
+    function get_status($params){
+        if($params == 1){
+            return 'Active';
+        }else{
+            return 'Not Active';
+        }
+    }
+}
 if(!function_exists('bagi_nama_div')){
     function bagi_nama_div($string){
     $total = str_word_count($string);

@@ -17,13 +17,13 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login Traine Apps</h2>
+					<!-- <h2 class="heading-section"></h2> -->
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-12 col-lg-10">
 					<div class="wrap d-md-flex">
-						<div class="img" style="background-image: url(assets/images/sc.png);">
+						<div class="img" style="background-image: url(assets/images/akagym.png);">
 			      	</div>
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex"> 
@@ -41,10 +41,14 @@
 						<div class="form-group">
 							<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
 						</div> 
+						
 		         	</form>  
 		        </div>
 		      </div>
 				</div>
+				<br>
+				&nbsp;
+				<p> Sistem Manajemen Member AKAGYM v1.0 | &copy 2022 </p>
 			</div>
 		</div>
 	</section>
