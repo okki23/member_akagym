@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Pegawai
+                                Member
                             </h2>
                             <br>
                             <a href="javascript:void(0);" id="addmodal" class="btn btn-primary waves-effect">  <i class="material-icons">add_circle</i>  Tambah Data </a>
@@ -23,7 +23,7 @@
 									<thead>
 										<tr> 
 											<th style="width:5%;">Nama</th>
-                                            <th style="width:5%;">Posisi</th>
+                                            <th style="width:5%;">Join Date</th>
                                             <th style="width:5%;">Telp</th>
                                             <th style="width:5%;">Alamat</th>                                           
                                             <th style="width:10%;">Opsi</th> 
@@ -83,8 +83,8 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Nama pegawai </label>
-                                                <input type="text" class="form-control" name="pegawai_name" id="pegawai_name">
+                                                <label for=""> Nama Member </label>
+                                                <input type="text" class="form-control" name="member_name" id="member_name">
                                             </div>
                                         </div>
                                     </div>
@@ -399,7 +399,7 @@
 		$("#defaultModal").modal('show');
  
 		$.ajax({
-			 url:"<?php echo base_url(); ?>pegawai/get_data_edit/"+id,
+			 url:"<?php echo base_url(); ?>member/get_data_edit/"+id,
 			 type:"GET",
 			 dataType:"JSON", 
 			 success:function(result){  
@@ -408,7 +408,7 @@
                  $("#nama").val(result.nama);
                  $("#barcode_rfid").val(result.barcode_rfid);
                  $("#title").val(result.title);
-                 $("#pegawai_name").val(result.pegawai_name);
+                 $("#member_name").val(result.member_name);
                  $("#gender").val(result.gender);
                  $("#dob").val(result.dob); 
                  $("#place_dob").val(result.place_dob); 
@@ -457,7 +457,7 @@
         {
         // ajax delete data to database
         $.ajax({
-            url : "<?php echo base_url('pegawai/hapus_data')?>/"+id,
+            url : "<?php echo base_url('member/hapus_data')?>/"+id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -490,7 +490,7 @@
 		 var formData = new FormData($('#user_form')[0]); 
   
                  $.ajax({
-                 url:"<?php echo base_url(); ?>pegawai/simpan_data",
+                 url:"<?php echo base_url(); ?>member/simpan_data",
                  type:"POST",
                  data:formData,
                  contentType:false,  
@@ -546,7 +546,7 @@
  
 		  
 		$('#example').DataTable({ 
-			"ajax": "<?php echo base_url(); ?>pegawai/fetch_pegawai" 
+			"ajax": "<?php echo base_url(); ?>member/fetch_member" 
 		});
 
         $('.datepicker').bootstrapMaterialDatePicker({

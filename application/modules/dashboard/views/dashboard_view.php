@@ -12,7 +12,19 @@
                           
                         </div> 
 
-                        
+                        <br>
+                        <hr>
+                        <h5> Reminder Member</h5>
+                        <table class="table table-bordered table-striped table-hover js-basic-example" id="example" >
+									<thead>
+										<tr> 
+											<th style="width:5%;">Nama Member</th>  
+                                            <th style="width:5%;">Paket Aktif</th>     
+                                            <th style="width:10%;">Sisa Pertemuan</th>
+										</tr>
+									</thead> 
+						</table> 
+                     
                         </div>
                     </div>
 
@@ -36,3 +48,6 @@
 <script type="text/javascript" src="<?php echo base_url('assets/orgchart/'); ?>scripts.js"></script>
  
  
+<script>
+        $('#example').DataTable();
+</script>

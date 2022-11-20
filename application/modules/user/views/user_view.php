@@ -25,8 +25,7 @@
                                         <tr>
                                            
                                             <th style="width:5%;">Username</th>  
-                                            <!-- <th style="width:5%;">Nama Pegawai</th>   -->
-                                            <th style="width:5%;">Level</th>  
+                                            <th style="width:5%;">Nama Pegawai</th>  
                                             <th style="width:10%;">Opsi</th> 
                                         </tr>
                                     </thead> 
@@ -45,7 +44,7 @@
    
     <!-- form tambah dan ubah data -->
     <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title" id="defaultModalLabel">Form Tambah Data</h4>
@@ -59,7 +58,7 @@
                                             <input type="text" name="username" id="username" class="form-control" placeholder="Username" />
                                         </div>
                                     </div>
-                                    <!-- <div class="input-group">
+                                    <div class="input-group">
                                                 <div class="form-line">
                                                     <input type="text" name="nama_pegawai" id="nama_pegawai" class="form-control" readonly="readonly" >
                                                     <input type="hidden" name="id_pegawai" id="id_pegawai" readonly="readonly">
@@ -68,7 +67,7 @@
                                                 <span class="input-group-addon">
                                                     <button type="button" onclick="CariKaryawan();" class="btn btn-primary"> Pilih Pegawai ... </button>
                                                 </span>
-                                    </div>            -->
+                                    </div>           
                                     <div class="form-group">
                                         <div class="form-line">
                                             <span class="label label-danger">* Kosongkan Apabila Tidak Mengganti Password </span>
@@ -80,25 +79,15 @@
                                     
                                         <label> User Type  </label>
                                         <br>
- 
                                         <input type="hidden" name="level" id="level">
 
                                         <button type="button" id="adminbtn" class="btn btn-default waves-effect "> Admin </button>
 
-                                        <button type="button" id="salesbtn" class="btn btn-default waves-effect "> Sales </button>
-
-                                        <button type="button" id="operatorbtn" class="btn btn-default waves-effect "> Operator </button>
-
-                                        <button type="button" id="csbtn" class="btn btn-default waves-effect "> CS </button>
-
-                                        <button type="button" id="salesleadbtn" class="btn btn-default waves-effect "> Sales Lead </button>
-
-                                        <button type="button" id="eduleadbtn" class="btn btn-default waves-effect "> Educational Lead </button>
- 
+                                        <button type="button" id="userbtn" class="btn btn-default waves-effect "> User </button>
                                     
                                     </div>
                                  
-                                 
+
                                    <button type="button" onclick="Simpan_Data();" class="btn btn-success waves-effect"> <i class="material-icons">save</i> Simpan</button>
 
                                    <button type="button" name="cancel" id="cancel" class="btn btn-danger waves-effect" onclick="javascript:Bersihkan_Form();" data-dismiss="modal"> <i class="material-icons">clear</i> Batal</button>
@@ -130,7 +119,8 @@
                                         <tr>  
                                             <th style="width:98%;">NIP </th> 
                                             <th style="width:98%;">Nama </th> 
-                                        </tr> 
+                                         </tr>
+                                          
                                     </thead> 
                                     <tbody id="daftar_karyawan">
 
@@ -146,87 +136,35 @@
  
    <script type="text/javascript">
     
-     $("#adminbtn").on("click",function(){
+    $("#adminbtn").on("click",function(){
         $("#level").val('1');
         $(this).attr('class','btn btn-primary');
-        $("#salesbtn").attr('class','btn btn-default'); 
-        $("#operatorbtn").attr('class','btn btn-default'); 
-        $("#csbtn").attr('class','btn btn-default'); 
-        $("#salesleadbtn").attr('class','btn btn-default'); 
-        $("#eduleadbtn").attr('class','btn btn-default'); 
-        
+        $("#userbtn").attr('class','btn btn-default'); 
     });
 
-    $("#salesbtn").on("click",function(){
+    $("#userbtn").on("click",function(){
         $("#level").val('2');
         $(this).attr('class','btn btn-primary');
         $("#adminbtn").attr('class','btn btn-default'); 
-        $("#operatorbtn").attr('class','btn btn-default'); 
-        $("#csbtn").attr('class','btn btn-default'); 
-        $("#salesleadbtn").attr('class','btn btn-default'); 
-        $("#eduleadbtn").attr('class','btn btn-default'); 
-        
     });
 
-    $("#operatorbtn").on("click",function(){
-        $("#level").val('3');
-        $(this).attr('class','btn btn-primary');
-        $("#adminbtn").attr('class','btn btn-default'); 
-        $("#salesbtn").attr('class','btn btn-default');  
-        $("#csbtn").attr('class','btn btn-default'); 
-        $("#salesleadbtn").attr('class','btn btn-default'); 
-        $("#eduleadbtn").attr('class','btn btn-default'); 
-        
+    function CariKaryawan(){
+        $("#CariKaryawanModal").modal({backdrop: 'static', keyboard: false,show:true});
+    } 
+    $('#daftar_karyawan').DataTable( {
+            "ajax": "<?php echo base_url(); ?>pegawai/fetch_pegawai"           
     });
 
-    $("#csbtn").on("click",function(){
-        $("#level").val('4');
-        $(this).attr('class','btn btn-primary');
-        $("#adminbtn").attr('class','btn btn-default'); 
-        $("#salesbtn").attr('class','btn btn-default');  
-        $("#operatorbtn").attr('class','btn btn-default'); 
-        $("#salesleadbtn").attr('class','btn btn-default'); 
-        $("#eduleadbtn").attr('class','btn btn-default'); 
-        
-    });
-
-    $("#salesleadbtn").on("click",function(){
-        $("#level").val('5');
-        $(this).attr('class','btn btn-primary');
-        $("#adminbtn").attr('class','btn btn-default'); 
-        $("#salesbtn").attr('class','btn btn-default');  
-        $("#operatorbtn").attr('class','btn btn-default'); 
-        $("#csbtn").attr('class','btn btn-default'); 
-        $("#eduleadbtn").attr('class','btn btn-default'); 
-    });
-
-    $("#eduleadbtn").on("click",function(){
-        $("#level").val('6');
-        $(this).attr('class','btn btn-primary');
-        $("#adminbtn").attr('class','btn btn-default'); 
-        $("#salesbtn").attr('class','btn btn-default');  
-        $("#operatorbtn").attr('class','btn btn-default'); 
-        $("#csbtn").attr('class','btn btn-default'); 
-        $("#salesleadbtn").attr('class','btn btn-default'); 
-    });
-
-    // function CariKaryawan(){
-    //     $("#CariKaryawanModal").modal({backdrop: 'static', keyboard: false,show:true});
-    // } 
-    // $('#daftar_karyawan').DataTable( {
-    //         "ajax": "<?php echo base_url(); ?>pegawai/fetch_pegawai"           
-    // });
-
-    // var daftar_karyawan = $('#daftar_karyawan').DataTable();
+    var daftar_karyawan = $('#daftar_karyawan').DataTable();
      
-    //  $('#daftar_karyawan tbody').on('click', 'tr', function () {
+     $('#daftar_karyawan tbody').on('click', 'tr', function () {
          
-    //      var content = daftar_karyawan.row(this).data()
-    //      console.log(content);
-    //      $("#nama_pegawai").val(content[1]);
-    //      $("#id_pegawai").val(content[4]);
-    //      $("#CariKaryawanModal").modal('hide');
-    //  } );
+         var content = daftar_karyawan.row(this).data()
+         console.log(content);
+         $("#nama_pegawai").val(content[1]);
+         $("#id_pegawai").val(content[4]);
+         $("#CariKaryawanModal").modal('hide');
+     } );
        
      function Ubah_Data(id){
         $("#defaultModalLabel").html("Form Ubah Data");
@@ -241,62 +179,22 @@
                  $("#id").val(result.id);
                  $("#username").val(result.username); 
                  $("#id_pegawai").val(result.id_pegawai);
-                //  $("#nama_pegawai").val(result.nama); 
+                 $("#nama_pegawai").val(result.nama); 
                  $("#level").val(result.level); 
 
-                if(result.level == '1'){
+                 if(result.level == '1'){
                     $("#adminbtn").attr('class','btn btn-primary');
-                    $("#salesbtn").attr('class','btn btn-default'); 
-                    $("#operatorbtn").attr('class','btn btn-default'); 
-                    $("#csbtn").attr('class','btn btn-default'); 
-                    $("#salesleadbtn").attr('class','btn btn-default'); 
-                    $("#eduleadbtn").attr('class','btn btn-default'); 
-                }else if(result.level == '2'){
-                    $("#salesbtn").attr('class','btn btn-primary');
-                    $("#adminbtn").attr('class','btn btn-default'); 
-                    $("#operatorbtn").attr('class','btn btn-default'); 
-                    $("#csbtn").attr('class','btn btn-default');  
-                    $("#salesleadbtn").attr('class','btn btn-default'); 
-                    $("#eduleadbtn").attr('class','btn btn-default'); 
-                }else if(result.level == '3'){
-                    $("#operatorbtn").attr('class','btn btn-primary');
-                    $("#adminbtn").attr('class','btn btn-default'); 
-                    $("#salesbtn").attr('class','btn btn-default');  
-                    $("#csbtn").attr('class','btn btn-default'); 
-                    $("#salesleadbtn").attr('class','btn btn-default'); 
-                    $("#eduleadbtn").attr('class','btn btn-default'); 
-                }else if(result.level == '4'){
-                    $("#csbtn").attr('class','btn btn-primary');
-                    $("#adminbtn").attr('class','btn btn-default'); 
-                    $("#salesbtn").attr('class','btn btn-default');  
-                    $("#operatorbtn").attr('class','btn btn-default');
-                    $("#salesleadbtn").attr('class','btn btn-default'); 
-                    $("#eduleadbtn").attr('class','btn btn-default');   
-                }else if(result.level == '5'){
-                    $("#salesleadbtn").attr('class','btn btn-primary');
-                    $("#csbtn").attr('class','btn btn-default');
-                    $("#adminbtn").attr('class','btn btn-default'); 
-                    $("#salesbtn").attr('class','btn btn-default');  
-                    $("#operatorbtn").attr('class','btn btn-default');
-                    $("#eduleadbtn").attr('class','btn btn-default');  
-                }else if(result.level == '6'){
-                    $("#eduleadbtn").attr('class','btn btn-primary');
-                    $("#csbtn").attr('class','btn btn-primary');
-                    $("#adminbtn").attr('class','btn btn-default'); 
-                    $("#salesbtn").attr('class','btn btn-default');  
-                    $("#operatorbtn").attr('class','btn btn-default');
-                    $("#salesleadbtn").attr('class','btn btn-default'); 
-                } 
+                    $("#userbtn").attr('class','btn btn-default');
+                 }else{
+                    $("#adminbtn").attr('class','btn btn-default');
+                    $("#userbtn").attr('class','btn btn-primary');
+                 }
              }
          });
      }
  
      function Bersihkan_Form(){
         $(':input').val(''); 
-        $("#csbtn").attr('class','btn btn-default');
-        $("#adminbtn").attr('class','btn btn-default');
-        $("#salesbtn").attr('class','btn btn-default');
-        $("#operatorbtn").attr('class','btn btn-default');
      }
 
      function CariAdminPPPU(){
@@ -349,9 +247,12 @@
     function Simpan_Data(){
         //setting semua data dalam form dijadikan 1 variabel 
          var formData = new FormData($('#user_form')[0]); 
- 
+
+          
          //validasi form sebelum submit ke controller
-         var username = $("#username").val(); 
+         var username = $("#username").val();
+        
+        
           
          if(username == ''){
             alert("Username Belum anda masukkan!");
@@ -364,16 +265,15 @@
             $.ajax({
              url:"<?php echo base_url(); ?>user/simpan_data_user",
              type:"POST",
-             data:formData,  
+             data:formData,
              contentType:false,  
-             processData:false,    
+             processData:false,   
              success:function(result){ 
                 
                  $("#defaultModal").modal('hide');
                  $('#example').DataTable().ajax.reload(); 
                  $('#user_form')[0].reset();
                  
-                 Bersihkan_Form();
                  $.notify("Data berhasil disimpan!", {
                     animate: {
                         enter: 'animated fadeInRight',

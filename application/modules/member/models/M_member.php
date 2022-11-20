@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class M_pegawai extends Parent_Model { 
+class M_member extends Parent_Model { 
   
-     var $nama_tabel = 'm_pegawai';
-     var $daftar_field = array('id','employee_name','address','phone','email','job_title','status','dob_place','dob','marital_status','join_date','npwp_status','no_npwp','id_bank','bank_account','foto');
+     var $nama_tabel = 'm_member';
+     var $daftar_field = array('id','barcode_rfid','title','member_name','gender','dob','phone','no_ktp','address','register_date','id_marketing','status','id_bank','bank_account','jenis_kartu','foto','email','emergency_contact','place_dob','kodepos');
      var $primary_key = 'id'; 
 	  
   public function __construct(){
@@ -12,7 +12,7 @@ class M_pegawai extends Parent_Model {
         $this->load->database();
   }
   
-  public function fetch_pegawai(){
+  public function fetch_member(){
        
 		   $getdata = $this->db->get($this->nama_tabel)->result();
 		   $data = array();  
@@ -22,8 +22,8 @@ class M_pegawai extends Parent_Model {
                 $sub_array = array(); 
  
                 
-                $sub_array[] = $row->employee_name;  
-                $sub_array[] = $row->job_title; 
+                $sub_array[] = $row->member_name;  
+                $sub_array[] = $row->register_date; 
                 $sub_array[] = $row->phone; 
                 $sub_array[] = $row->address;  
                 $sub_array[] = '

@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class M_bank extends Parent_Model { 
+class M_trainer_jbt extends Parent_Model { 
   
 	 
-     var $nama_tabel = 'm_bank';
-     var $daftar_field = array('id','bank_name','status');
+     var $nama_tabel = 'm_posisi_trainer';
+     var $daftar_field = array('id','posisi_trainer');
      var $primary_key = 'id'; 
     
 	  
@@ -14,7 +14,7 @@ class M_bank extends Parent_Model {
           $this->load->database();
      }
   
-     public function fetch_bank(){
+     public function fetch_trainer_jbt(){
        
 		   $getdata = $this->db->get($this->nama_tabel)->result();
 		   $data = array();  
@@ -23,8 +23,7 @@ class M_bank extends Parent_Model {
                {  
                     $sub_array = array(); 
      
-                    $sub_array[] = $row->bank_name;   
-                    $sub_array[] = get_status($row->status);    
+                    $sub_array[] = $row->posisi_trainer;  
                     $sub_array[] = '
                     <a href="javascript:void(0)" class="btn btn-warning btn-xs waves-effect" id="edit" onclick="Ubah_Data('.$row->id.');" > <i class="material-icons">create</i> Ubah </a>  &nbsp; 
                     <a href="javascript:void(0)" id="delete" class="btn btn-danger btn-xs waves-effect" onclick="Hapus_Data('.$row->id.');" > <i class="material-icons">delete</i> Hapus </a>  &nbsp;';  

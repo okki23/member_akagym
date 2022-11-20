@@ -169,21 +169,21 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url('sales'); ?>">
+                                <a href="<?php echo base_url('member'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Member</span>
                                 </a>
                             </li> 
 
                             <li>
-                                <a href="<?php echo base_url('trainer'); ?>">
+                                <a href="<?php echo base_url('pegawai'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Pegawai</span>
                                 </a>
                             </li>  
 
                             <li>
-                                <a href="<?php echo base_url('instansi'); ?>">
+                                <a href="<?php echo base_url('instruktur'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Instruktur</span>
                                 </a>
@@ -195,31 +195,31 @@
                                 </a>
                             </li> 
                             <li>
-                                <a href="<?php echo base_url('room'); ?>">
+                                <a href="<?php echo base_url('payment_type'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Payment Type</span>
                                 </a>
                             </li> 
                             <li>
-                                <a href="<?php echo base_url('kategori_training'); ?>">
+                                <a href="<?php echo base_url('group_package'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Group Package</span>
                                 </a>
                             </li>  
                             <li>
-                                <a href="<?php echo base_url('user'); ?>">
+                                <a href="<?php echo base_url('package_service'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Paket Service</span>
                                 </a>
                             </li> 
                             <li>
-                                <a href="<?php echo base_url('user'); ?>">
+                                <a href="<?php echo base_url('member_type'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Member Type</span>
                                 </a>
                             </li> 
                             <li>
-                                <a href="<?php echo base_url('user'); ?>">
+                                <a href="<?php echo base_url('category_name'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Category Name</span>
                                 </a>
@@ -228,9 +228,13 @@
                                 <a href="<?php echo base_url('uom'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>UOM (Unit of Measurement)</span>
+                                </a> 
+                            </li> 
+                            <li>
+                                <a href="<?php echo base_url('user'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>User</span>
                                 </a>
-                        
-                                
                             </li> 
                         </ul>
                  

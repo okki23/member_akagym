@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class pegawai extends Parent_Controller {
+class Member extends Parent_Controller {
 	 
-  var $nama_tabel = 'm_pegawai';
-  var $daftar_field = array('id','employee_name','address','phone','email','job_title','status','dob_place','dob','marital_status','join_date','npwp_status','no_npwp','id_bank','bank_account','foto');
+  var $nama_tabel = 'm_member';
+  var $daftar_field = array('id','barcode_rfid','title','member_name','gender','dob','phone','no_ktp','address','register_date','id_marketing','status','id_bank','bank_account','jenis_kartu','foto','email','emergency_contact','place_dob','kodepos');
   var $primary_key = 'id'; 
   
  	public function __construct(){
  		parent::__construct();
- 		$this->load->model('m_pegawai'); 
+ 		$this->load->model('m_member'); 
 		if(!$this->session->userdata('username')){
 		   echo "<script language=javascript>
 				 alert('Anda tidak berhak mengakses halaman ini!');
@@ -20,20 +20,20 @@ class pegawai extends Parent_Controller {
  
   	public function index(){
   		$data['judul'] = $this->data['judul']; 
-  		$data['konten'] = 'pegawai/pegawai_view';
+  		$data['konten'] = 'member/member_view';
   		$this->load->view('template_view',$data);		
      
   	} 
  
-  	public function fetch_pegawai(){  
-       $getdata = $this->m_pegawai->fetch_pegawai();
+  	public function fetch_member(){  
+       $getdata = $this->m_member->fetch_member();
        echo json_encode($getdata);   
 	}
  
  
 	public function get_data_edit(){
 		$id = $this->uri->segment(3);
-		$qr = "select a.*,b.employee_name as marketing,c.bank_name from m_pegawai a 
+		$qr = "select a.*,b.employee_name as marketing,c.bank_name from m_member a 
 		left join m_pegawai b on b.id = a.id_marketing
 		left join m_bank c on c.id = a.id_bank where a.id = '$id'";
 		$sql = $this->db->query($qr)->row();
@@ -43,7 +43,7 @@ class pegawai extends Parent_Controller {
 	public function hapus_data(){
 		$id = $this->uri->segment(3);  
 	 
-   		$sqlhapus = $this->m_pegawai->hapus_data($id);
+   		$sqlhapus = $this->m_member->hapus_data($id);
 		
 		if($sqlhapus){
 			$result = array("response"=>array('message'=>'success'));
@@ -56,11 +56,11 @@ class pegawai extends Parent_Controller {
 	 
 	public function simpan_data(){ 
     
-		$data_form = $this->m_pegawai->array_from_post($this->daftar_field);
+		$data_form = $this->m_member->array_from_post($this->daftar_field);
 
 		$id = isset($data_form['id']) ? $data_form['id'] : NULL;  
 
-    	$simpan_data = $this->m_pegawai->simpan_data($data_form,$this->nama_tabel,$this->primary_key,$id);
+    	$simpan_data = $this->m_member->simpan_data($data_form,$this->nama_tabel,$this->primary_key,$id);
 		// echo $this->db->last_query();
 		// die();
 		$simpan_foto = $this->upload_foto();
