@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
+				<div class="col-md-12 col-lg-10" style="margin-bottom: 10px;">
 					<div class="wrap d-md-flex">
 						<div class="img" style="background-image: url(assets/images/akagym.png);">
 			      	</div>
@@ -48,7 +48,9 @@
 				</div>
 				<br>
 				&nbsp;
-				<p> Sistem Manajemen Member AKAGYM v1.0 | &copy 2022 </p>
+				<br>
+				&nbsp;
+				<p> Sistem Manajemen Member AKAGYM v1.0 &nbsp; &copy 2022 </p>
 			</div>
 		</div>
 	</section>
