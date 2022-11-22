@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Member
+                                Instruktur
                             </h2>
                             <br>
                             <a href="javascript:void(0);" id="addmodal" class="btn btn-primary waves-effect">  <i class="material-icons">add_circle</i>  Tambah Data </a>
@@ -23,7 +23,7 @@
 									<thead>
 										<tr> 
 											<th style="width:5%;">Nama</th>
-                                            <th style="width:5%;">Join Date</th>
+                                            <th style="width:5%;">Posisi</th>
                                             <th style="width:5%;">Telp</th>
                                             <th style="width:5%;">Alamat</th>                                           
                                             <th style="width:10%;">Opsi</th> 
@@ -40,7 +40,7 @@
 
         </div>
     </section>
-    
+ 
 
 	<!-- form tambah dan ubah data -->
 	<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
@@ -51,22 +51,22 @@
                         </div>
                         <div class="modal-body">
                         <form method="post" id="user_form" enctype="multipart/form-data">    
-                            <input type="hidden" name="id" id="id"> 
+                            <input type="text" name="id" id="id"> 
                             
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> No RFID </label>
-                                                <input type="text" class="form-control" name="barcode_rfid" id="barcode_rfid" readonly>
+                                                <label for=""> Nama instruktur </label>
+                                                <input type="text" class="form-control" name="employee_name" id="employee_name">
                                             </div>
                                         </div> 
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Tanggal Daftar</label>
-                                                <input type="text" class="form-control" name="register_date" id="register_date" readonly>
+                                                <label for=""> Alamat</label>
+                                                <input type="text" class="form-control" name="address" id="address">
                                             </div>
                                         </div>
                                     </div>
@@ -76,16 +76,16 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Title </label>
-                                                <input type="text" class="form-control" name="title" id="title">
+                                                <label for=""> Telepon </label>
+                                                <input type="text" class="form-control" name="phone" id="phone">
                                             </div>
                                         </div> 
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Nama Member </label>
-                                                <input type="text" class="form-control" name="member_name" id="member_name">
+                                                <label for=""> Email </label>
+                                                <input type="text" class="form-control" name="email" id="email">
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <label for="">  Tempat Lahir </label>
-                                                <input type="text" class="form-control" name="place_dob" id="place_dob">
+                                                <input type="text" class="form-control" name="dob_place" id="dob_place">
                                             </div>
                                         </div>
                                     </div>
@@ -109,33 +109,14 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row clearfix"> 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="">  No Telp </label>
-                                            <input type="text" class="form-control" name="phone" id="phone">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="">  Emergency Kontak </label>
-                                            <input type="text" class="form-control" name="emergency_contact" id="emergency_contact">
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>  
-                                
+ 
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                         
                                                 <label for=""> Jenis Kelamin </label>
                                                 <br>
-                                                <input type="hidden" name="gender" id="gender">
+                                                <input type="text" name="gender" id="gender">
 
                                                 <button type="button" id="priabtn" class="btn btn-default waves-effect "> Pria </button>
 
@@ -145,12 +126,20 @@
                                         </div> 
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <label for=""> No KTP </label>
-                                                <input type="text" class="form-control" name="no_ktp" id="no_ktp">
-                                            </div>
-                                        </div> 
+                                    <div class="form-group">
+                                        
+                                        <label for=""> Status Pernikahan </label>
+                                        <br>
+                                        <input type="text" name="marital_status" id="marital_status">
+
+                                        <button type="button" id="mariedbtn" class="btn btn-default waves-effect "> Menikah </button>
+
+                                        <button type="button" id="singlebtn" class="btn btn-default waves-effect "> Single </button>
+
+                                        <button type="button" id="divorcebtn" class="btn btn-default waves-effect "> Divorce </button>
+                                        <br>
+                                
+                                </div> 
                                     </div> 
                                 </div> 
 
@@ -158,44 +147,27 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Email </label>
-                                                <input type="text" class="form-control" name="email" id="email">
+                                                <label for=""> NPWP </label>
+                                                <input type="text" class="form-control" name="no_npwp" id="no_npwp">
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                                     <div class="form-line">
-                                                        <label for="">Marketing</label>
-                                                        <input type="text" name="nama_marketing" id="nama_marketing" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_marketing" id="id_marketing" required>
+                                                        <label for="">Posisi</label>
+                                                        <input type="text" name="nama_posisi" id="nama_posisi" class="form-control" readonly="readonly" >
+                                                        <input type="text" name="id_posisi" id="id_posisi" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
-                                                        <button type="button" onclick="PilihMarketing();" class="btn btn-primary"> Pilih Marketing ... </button>
+                                                        <button type="button" onclick="PilihPosisi();" class="btn btn-primary"> Pilih Posisi ... </button>
                                                     </span>
                                         </div> 
                                     </div>
                                 </div> 
 
-                                <div class="row clearfix"> 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="">  Alamat  </label>
-                                            <input type="text" class="form-control" name="address" id="address">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="">  Kode POS </label>
-                                            <input type="text" class="form-control" name="kodepos" id="kodepos">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                
 
                             <div class="row clearfix"> 
                                     <div class="col-sm-6">
@@ -212,7 +184,7 @@
                                                     <div class="form-line">
                                                         <label for="">Bank</label>
                                                         <input type="text" name="nama_bank" id="nama_bank" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_bank" id="id_bank" required>
+                                                        <input type="text" name="id_bank" id="id_bank" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -223,27 +195,14 @@
                                 </div>
 
                                 <div class="row clearfix">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                        
-                                                <label for=""> Status </label>
-                                                <br>
-                                                <input type="hidden" name="status" id="status">
-
-                                                <button type="button" id="aktifbtn" class="btn btn-default waves-effect "> Aktif </button>
-
-                                                <button type="button" id="nonaktifbtn" class="btn btn-default waves-effect "> Non Aktif </button>
-                                                <br>
-                                        
-                                        </div> 
-                                    </div>
-                                    <div class="col-sm-6">
+                              
+                                    <div class="col-sm-12">
                                         <div class="form-group">
                                             <div class="form-line">
                                                 Upload Foto 
                                                 <input type="file" name="user_image" id="user_image" class="form-control" onchange="PreviewGambar(this);" placeholder="Foto" />  
                                             </div>
-                                            <input type="hidden" name="foto" id="foto">
+                                            <input type="text" name="foto" id="foto">
                                         </div>
                                     </div> 
                                 </div>
@@ -262,7 +221,7 @@
                 </div>
     </div>
 
-    
+     
     <!-- modal cari bank -->
     <div class="modal fade" id="PilihBankModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
@@ -295,12 +254,12 @@
                 </div>
     </div>
 
-    <!-- modal cari marketing -->
-    <div class="modal fade" id="PilihMarketingModal" tabindex="-1" role="dialog">
+    <!-- modal cari posisi -->
+    <div class="modal fade" id="PilihPosisiModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" > Pilih Marketing </h4>
+                            <h4 class="modal-title" > Pilih Posisi </h4>
                         </div>
                         <div class="modal-body">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
@@ -308,16 +267,16 @@
                                 <br>
                                 <hr>
 
-                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_marketing" >
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_posisi" >
   
                                     <thead>
                                         <tr> 
                                    
-                                            <th style="width:95%;">Nama Marketing</th>
+                                            <th style="width:95%;">Posisi</th>
                                              
                                         </tr>
                                     </thead> 
-                                    <tbody id="daftar_marketingx">
+                                    <tbody id="daftar_posisix">
 
                                 </tbody>
                                 </table> 
@@ -341,58 +300,67 @@
         $("#priabtn").attr('class','btn btn-default'); 
     });
 
-    $("#aktifbtn").on("click",function(){
-        $("#status").val('1');
+    $("#singlebtn").on("click",function(){
+        $("#marital_status").val('S');
         $(this).attr('class','btn btn-primary');
-        $("#nonaktifbtn").attr('class','btn btn-default'); 
+        $("#mariedbtn").attr('class','btn btn-default'); 
+        $("#divorcebtn").attr('class','btn btn-default'); 
     });
 
-    $("#nonaktifbtn").on("click",function(){
-        $("#status").val('2');
+    $("#mariedbtn").on("click",function(){
+        $("#marital_status").val('M');
         $(this).attr('class','btn btn-primary');
-        $("#aktifbtn").attr('class','btn btn-default'); 
+        $("#divorcebtn").attr('class','btn btn-default'); 
+        $("#singlebtn").attr('class','btn btn-default'); 
     });
 
-    
+    $("#divorcebtn").on("click",function(){
+        $("#marital_status").val('D');
+        $(this).attr('class','btn btn-primary');
+        $("#mariedbtn").attr('class','btn btn-default'); 
+        $("#singlebtn").attr('class','btn btn-default'); 
+    });
 
+
+     
 	function PilihBank(){
         $("#PilihBankModal").modal({backdrop: 'static', keyboard: false,show:true});
     }
 
-    function PilihMarketing(){
-        $("#PilihMarketingModal").modal({backdrop: 'static', keyboard: false,show:true});
+    function PilihPosisi(){
+        $("#PilihPosisiModal").modal({backdrop: 'static', keyboard: false,show:true});
     }
+ 
+    $('#daftar_posisi').DataTable( {
+        "ajax": "<?php echo base_url(); ?>trainer_jbt/fetch_trainer_jbt" 
+    });
 
     $('#daftar_bank').DataTable( {
         "ajax": "<?php echo base_url(); ?>bank/fetch_bank" 
     });
 
-    $('#daftar_marketing').DataTable( {
-        "ajax": "<?php echo base_url(); ?>pegawai/fetch_pegawai" 
-    });
-
-
     
+    var daftar_posisi = $('#daftar_posisi').DataTable();
+     
+        $('#daftar_posisi tbody').on('click', 'tr', function () {
+            
+            var content = daftar_posisi.row(this).data() 
+            $("#nama_posisi").val(content[0]);
+            $("#id_posisi").val(content[2]);
+            $("#PilihPosisiModal").modal('hide');
+        } );
+
+   
     var daftar_bank = $('#daftar_bank').DataTable();
      
-        $('#daftar_bank tbody').on('click', 'tr', function () {
-            
-            var content = daftar_bank.row(this).data() 
-            $("#nama_bank").val(content[0]);
-            $("#id_bank").val(content[3]);
-            $("#PilihBankModal").modal('hide');
-        } );
+     $('#daftar_bank tbody').on('click', 'tr', function () {
+         
+         var content = daftar_bank.row(this).data() 
+         $("#nama_bank").val(content[0]);
+         $("#id_bank").val(content[3]);
+         $("#PilihBankModal").modal('hide');
+     } );
 
-    var daftar_marketing = $('#daftar_marketing').DataTable();
-     
-        $('#daftar_marketing tbody').on('click', 'tr', function () {
-            
-            var content = daftar_marketing.row(this).data()
-          
-            $("#nama_marketing").val(content[0]);
-            $("#id_marketing").val(content[4]);
-            $("#PilihMarketingModal").modal('hide');
-        } );
     
   
 	 function Ubah_Data(id){
@@ -400,7 +368,7 @@
 		$("#defaultModal").modal('show');
  
 		$.ajax({
-			 url:"<?php echo base_url(); ?>member/get_data_edit/"+id,
+			 url:"<?php echo base_url(); ?>instruktur/get_data_edit/"+id,
 			 type:"GET",
 			 dataType:"JSON", 
 			 success:function(result){  
@@ -409,41 +377,52 @@
                  $("#nama").val(result.nama);
                  $("#barcode_rfid").val(result.barcode_rfid);
                  $("#title").val(result.title);
-                 $("#member_name").val(result.member_name);
+                 $("#employee_name").val(result.employee_name);
                  $("#gender").val(result.gender);
                  $("#dob").val(result.dob); 
-                 $("#place_dob").val(result.place_dob); 
+                 $("#dob_place").val(result.dob_place); 
                  $("#bank_account").val(result.bank_account); 
                  $("#phone").val(result.phone);  
                  $("#nama_marketing").val(result.marketing);  
                  $("#nama_bank").val(result.bank_name);   
                  $("#no_ktp").val(result.no_ktp); 
                  $("#address").val(result.address);  
-                 $("#register_date").val(result.register_date); 
-                 $("#id_marketing").val(result.id_marketing); 
+                 $("#register_date").val(result.register_date);  
                  $("#status").val(result.status); 
                  $("#id_bank").val(result.id_bank); 
+                 $("#no_npwp").val(result.no_npwp); 
                  $("#foto").val(result.foto); 
                  $("#email").val(result.email); 
                  $("#emergency_contact").val(result.emergency_contact); 
                  $("#kodepos").val(result.kodepos); 
-           
+        
+
+                $("#id_posisi").val(result.id_posisi); 
+                 $("#nama_posisi").val(result.posisi_trainer); 
+                 $("#marital_status").val(result.marital_status); 
+
 				 $('#image1').attr('src',"upload/"+result.foto);
                  if(result.gender == 'P'){
                     $("#priabtn").attr('class','btn btn-primary');
                     $("#wanitatbn").attr('class','btn btn-default');
                  }else{
-                    $("#wanitabtn").attr('class','btn btn-primary');
+                    $("#wanitatbn").attr('class','btn btn-primary');
                     $("#priabtn").attr('class','btn btn-default');
                  }
 
-                 if(result.status == 1){
-                    $("#aktifbtn").attr('class','btn btn-primary');
-                    $("#nonaktifbtn").attr('class','btn btn-default');
-                 }else{
-                    $("#nonaktifbtn").attr('class','btn btn-default');
-                    $("#aktifbtn").attr('class','btn btn-primary');
-                 }
+                 if(result.marital_status == 'S'){ 
+                    $("#singlebtn").attr('class','btn btn-primary'); 
+                    $("#mariedbtn").attr('class','btn btn-default'); 
+                    $("#divorcebtn").attr('class','btn btn-default'); 
+                 }else if(result.marital_status == 'D'){ 
+                    $("#singlebtn").attr('class','btn btn-default'); 
+                    $("#mariedbtn").attr('class','btn btn-default'); 
+                    $("#divorcebtn").attr('class','btn btn-primary'); 
+                 }else if(result.marital_status == 'M'){ 
+                    $("#singlebtn").attr('class','btn btn-default'); 
+                    $("#mariedbtn").attr('class','btn btn-primary'); 
+                    $("#divorcebtn").attr('class','btn btn-default'); 
+                 } 
 			 }
 		 });
 	 }
@@ -458,7 +437,7 @@
         {
         // ajax delete data to database
         $.ajax({
-            url : "<?php echo base_url('member/hapus_data')?>/"+id,
+            url : "<?php echo base_url('instruktur/hapus_data')?>/"+id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -491,7 +470,7 @@
 		 var formData = new FormData($('#user_form')[0]); 
   
                  $.ajax({
-                 url:"<?php echo base_url(); ?>member/simpan_data",
+                 url:"<?php echo base_url(); ?>instruktur/simpan_data",
                  type:"POST",
                  data:formData,
                  contentType:false,  
@@ -535,19 +514,9 @@
        $(document).ready(function() {
 		   
 		$("#addmodal").on("click",function(){
-
-            $.get("<?php echo base_url('member/header_member'); ?>",function(result){ 
-                var parsing = JSON.parse(result);
-                $("#barcode_rfid").val(parsing.rfid);
-                $("#register_date").val(parsing.date);
-         
-            });
-
 			$("#defaultModal").modal({backdrop: 'static', keyboard: false,show:true});
             $("#method").val('Add');
             $("#defaultModalLabel").html("Form Tambah Data");
-
-            
 		});
 
         var dateObj = new Date();
@@ -557,7 +526,7 @@
  
 		  
 		$('#example').DataTable({ 
-			"ajax": "<?php echo base_url(); ?>member/fetch_member" 
+			"ajax": "<?php echo base_url(); ?>instruktur/fetch_instruktur" 
 		});
 
         $('.datepicker').bootstrapMaterialDatePicker({

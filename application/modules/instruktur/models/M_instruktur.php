@@ -1,22 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class M_pegawai extends Parent_Model { 
+class M_instruktur extends Parent_Model { 
   
-	var $nama_tabel = 'm_pegawai';
-	var $daftar_field = array('id','employee_name','address','phone','email','job_title','status','dob_place','dob','marital_status','join_date','npwp_status','no_npwp','id_bank','bank_account','foto','id_posisi','gender');
-	var $primary_key = 'id';
+	var $nama_tabel = 'm_instruktur';
+	var $daftar_field = array('id','employee_name','address','phone','email','dob_place','dob','marital_status','join_date','no_npwp','id_bank','bank_account','foto','id_posisi','gender');
+	var $primary_key = 'id'; 
 	  
   public function __construct(){
         parent::__construct();
         $this->load->database();
   }
   
-  public function fetch_pegawai(){
+  public function fetch_instruktur(){
        
-		   $getdata = $this->db->query("
-               select a.*,b.posisi from m_pegawai a 
-               left join m_posisi b on b.id = a.id_posisi")->result();
+      $getdata = $this->db->query("
+      select a.*,b.posisi_trainer from m_instruktur a 
+      left join m_posisi_trainer b on b.id = a.id_posisi")->result();
 		   $data = array();  
 		   $no = 1;
            foreach($getdata as $row)  
@@ -25,7 +25,7 @@ class M_pegawai extends Parent_Model {
  
                 
                 $sub_array[] = $row->employee_name;  
-                $sub_array[] = $row->posisi; 
+                $sub_array[] = $row->posisi_trainer; 
                 $sub_array[] = $row->phone; 
                 $sub_array[] = $row->address;  
                 $sub_array[] = '

@@ -6,6 +6,8 @@ class Member extends Parent_Controller {
   var $nama_tabel = 'm_member';
   var $daftar_field = array('id','barcode_rfid','title','member_name','gender','dob','phone','no_ktp','address','register_date','id_marketing','status','id_bank','bank_account','jenis_kartu','foto','email','emergency_contact','place_dob','kodepos');
   var $primary_key = 'id'; 
+
+  
   
  	public function __construct(){
  		parent::__construct();
@@ -25,6 +27,15 @@ class Member extends Parent_Controller {
      
   	} 
  
+
+	public function header_member(){ 
+		$now = date('Y-m-d');  
+		$last_id = str_pad(mt_rand(1,99999999),7,'0',STR_PAD_LEFT);
+		$parse = array('rfid'=>$last_id,'date'=>$now);
+		echo json_encode($parse);  
+	}
+  
+
   	public function fetch_member(){  
        $getdata = $this->m_member->fetch_member();
        echo json_encode($getdata);   

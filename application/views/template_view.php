@@ -181,6 +181,12 @@
                                     <span>Pegawai</span>
                                 </a>
                             </li>  
+                            <li>
+                                <a href="<?php echo base_url('pegawai_jbt'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Jabatan Pegawai</span>
+                                </a>
+                            </li>  
 
                             <li>
                                 <a href="<?php echo base_url('instruktur'); ?>">
@@ -188,6 +194,15 @@
                                     <span>Instruktur</span>
                                 </a>
                             </li> 
+
+                            <li>
+                                <a href="<?php echo base_url('trainer_jbt'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Instruktur Type</span>
+                                </a>
+                            </li> 
+
+
                             <li>
                                 <a href="<?php echo base_url('bank'); ?>">
                                 <i class="material-icons">dns</i>

@@ -22,8 +22,8 @@
 							   <table class="table table-bordered table-striped table-hover js-basic-example" id="example" >
 									<thead>
 										<tr> 
-											<th style="width:5%;">Posisi</th>                               
-                                            <th style="width:10%;">Opsi</th> 
+											<th style="width:70%;">Posisi</th>                               
+                                            <th style="width:20%;">Opsi</th> 
 										</tr>
 									</thead> 
 								</table> 

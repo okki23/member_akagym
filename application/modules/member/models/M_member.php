@@ -12,6 +12,13 @@ class M_member extends Parent_Model {
         $this->load->database();
   }
   
+  public function get_no(){ 
+ 
+     $db = $this->db->query('select substr(max(barcode_rfid),1,3) as result from m_member')->result_array();
+
+     return $db;
+}
+
   public function fetch_member(){
        
 		   $getdata = $this->db->get($this->nama_tabel)->result();
