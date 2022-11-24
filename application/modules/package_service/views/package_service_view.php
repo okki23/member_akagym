@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Instruktur
+                                Package Service
                             </h2>
                             <br>
                             <a href="javascript:void(0);" id="addmodal" class="btn btn-primary waves-effect">  <i class="material-icons">add_circle</i>  Tambah Data </a>
@@ -35,9 +35,7 @@
                     </div>
                 </div>
             </div>
-         
-
-
+          
         </div>
     </section>
  
@@ -57,7 +55,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Nama instruktur </label>
+                                                <label for=""> Package Name </label>
                                                 <input type="text" class="form-control" name="employee_name" id="employee_name">
                                             </div>
                                         </div> 
@@ -65,7 +63,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Alamat</label>
+                                                <label for=""> Remark</label>
                                                 <input type="text" class="form-control" name="address" id="address">
                                             </div>
                                         </div>
@@ -74,37 +72,52 @@
 
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <label for=""> Telepon </label>
-                                                <input type="text" class="form-control" name="phone" id="phone">
-                                            </div>
+                                        <div class="input-group">
+                                                    <div class="form-line">
+                                                        <label for="">Group Package</label>
+                                                        <input type="text" name="nama_group" id="nama_group" class="form-control" readonly="readonly" >
+                                                        <input type="hidden" name="id_group" id="id_group" required>
+                                                        
+                                                    </div>
+                                                    <span class="input-group-addon">
+                                                        <button type="button" onclick="PilihGroupPackage();" class="btn btn-primary"> Pilih Group Package ... </button>
+                                                    </span>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                                    <div class="form-line">
+                                                        <label for="">Category Service</label>
+                                                        <input type="text" name="cat_service" id="cat_service" class="form-control" readonly="readonly" >
+                                                        <input type="hidden" name="id_cat_service" id="id_cat_service" required>
+                                                        
+                                                    </div>
+                                                    <span class="input-group-addon">
+                                                        <button type="button" onclick="PilihCatService();" class="btn btn-primary"> Pilih Category Service ... </button>
+                                                    </span>
+                                        </div> 
+                                    </div>
+                                </div>  
+
+                                <div class="row clearfix"> 
+                                <div class="col-sm-6">
+                                        <div class="input-group">
+                                                    <div class="form-line">
+                                                        <label for="">Visit Type</label>
+                                                        <input type="text" name="visit_type" id="visit_type" class="form-control" readonly="readonly" >
+                                                        <input type="hidden" name="id_visit_type" id="id_visit_type" required>
+                                                        
+                                                    </div>
+                                                    <span class="input-group-addon">
+                                                        <button type="button" onclick="PilihVisitType();" class="btn btn-primary"> Pilih Visit Type ... </button>
+                                                    </span>
                                         </div> 
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> Email </label>
-                                                <input type="text" class="form-control" name="email" id="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  
-
-                                <div class="row clearfix"> 
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <label for="">  Tempat Lahir </label>
-                                                <input type="text" class="form-control" name="dob_place" id="dob_place">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <label for="">  Tanggal Lahir </label>
-                                                <input type="text" class="datepicker form-control" name="dob" id="dob">
+                                                <label for="">  Qty </label>
+                                                <input type="text" class="form-control" name="qty" id="qty">
                                             </div>
                                         </div>
                                     </div>
@@ -113,55 +126,42 @@
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                        
-                                                <label for=""> Jenis Kelamin </label>
-                                                <br>
-                                                <input type="hidden" name="gender" id="gender">
-
-                                                <button type="button" id="priabtn" class="btn btn-default waves-effect "> Pria </button>
-
-                                                <button type="button" id="wanitabtn" class="btn btn-default waves-effect "> Wanita </button>
-                                                <br>
-                                        
-                                        </div> 
+                                            <div class="form-line">
+                                                <label for="">  Price </label>
+                                                <input type="text" class="form-control" name="price" id="price">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                    <div class="form-group">
-                                        
-                                        <label for=""> Status Pernikahan </label>
-                                        <br>
-                                        <input type="hidden" name="marital_status" id="marital_status">
 
-                                        <button type="button" id="mariedbtn" class="btn btn-default waves-effect "> Menikah </button>
-
-                                        <button type="button" id="singlebtn" class="btn btn-default waves-effect "> Single </button>
-
-                                        <button type="button" id="divorcebtn" class="btn btn-default waves-effect "> Divorce </button>
-                                        <br>
-                                
-                                </div> 
-                                    </div> 
-                                </div> 
-
-                                <div class="row clearfix"> 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <label for=""> NPWP </label>
-                                                <input type="text" class="form-control" name="no_npwp" id="no_npwp">
+                                                <label for="">  Expire Package Day </label>
+                                                <input type="text" class="form-control" name="expire_package_day" id="expire_package_day">
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
+                                </div> 
+
+                                <div class="row clearfix"> 
+                                <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="">  Durasi PT </label>
+                                                <input type="text" class="form-control" name="durasi_pt" id="durasi_pt">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
                                                     <div class="form-line">
-                                                        <label for="">Posisi</label>
-                                                        <input type="text" name="nama_posisi" id="nama_posisi" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_posisi" id="id_posisi" required>
+                                                        <label for="">Revenue</label>
+                                                        <input type="text" name="revenue" id="revenue" class="form-control" readonly="readonly" >
+                                                        <input type="hidden" name="id_revenue" id="id_revenue" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
-                                                        <button type="button" onclick="PilihPosisi();" class="btn btn-primary"> Pilih Posisi ... </button>
+                                                        <button type="button" onclick="PilihRevenue();" class="btn btn-primary"> Pilih Revenue ... </button>
                                                     </span>
                                         </div> 
                                     </div>
@@ -170,47 +170,27 @@
                                 
 
                             <div class="row clearfix"> 
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <label for=""> Rekening </label>
-                                                <input type="text" class="form-control" name="bank_account" id="bank_account">
-                                            </div>
+                            <div class="col-sm-6">
+                                        <div class="input-group">
+                                                    <div class="form-line">
+                                                        <label for="">Agreement</label>
+                                                        <input type="text" name="aggreement" id="aggreement" class="form-control" readonly="readonly" >
+                                                        <input type="hidden" name="id_aggreement" id="id_aggreement" required>
+                                                        
+                                                    </div>
+                                                    <span class="input-group-addon">
+                                                        <button type="button" onclick="PilihAgreement();" class="btn btn-primary"> Pilih Agreement ... </button>
+                                                    </span>
                                         </div> 
                                     </div>
                                     
                                     <div class="col-sm-6">
-                                        <div class="input-group">
-                                                    <div class="form-line">
-                                                        <label for="">Bank</label>
-                                                        <input type="text" name="nama_bank" id="nama_bank" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_bank" id="id_bank" required>
-                                                        
-                                                    </div>
-                                                    <span class="input-group-addon">
-                                                        <button type="button" onclick="PilihBank();" class="btn btn-primary"> Pilih Bank ... </button>
-                                                    </span>
-                                        </div> 
+                                     
                                     </div>
                                 </div>
 
                                 <div class="row clearfix">
-                              
-                                    <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                Upload Foto 
-                                                <input type="file" name="user_image" id="user_image" class="form-control" onchange="PreviewGambar(this);" placeholder="Foto" />  
-                                            </div>
-                                            <input type="hidden" name="foto" id="foto">
-                                        </div>
-                                    </div> 
-                                </div>
-                                    <div align="center">
-                                    <br>    
-                                    <img onerror="this.onerror=null;this.src='<?php echo base_url('upload/image_prev.jpg'); ?>';" id="image1" src="<?php echo base_url('upload/image_prev.jpg');?>" style="height: 300px;" alt="..." class="img-rounded img-responsive">
-                                    <br>
-                                    </div>
+                               
 								   <button type="button" onclick="Simpan_Data();" class="btn btn-success waves-effect"> <i class="material-icons">save</i> Simpan</button>
 
                                    <button type="button" name="cancel" id="cancel" class="btn btn-danger waves-effect" onclick="javascript:Bersihkan_Form();" data-dismiss="modal"> <i class="material-icons">clear</i> Batal</button>
@@ -222,12 +202,12 @@
     </div>
 
      
-    <!-- modal cari bank -->
-    <div class="modal fade" id="PilihBankModal" tabindex="-1" role="dialog">
+    <!-- modal cari group package -->
+    <div class="modal fade" id="PilihGroupPackageModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" > Pilih Bank </h4>
+                            <h4 class="modal-title" > Pilih Group Package </h4>
                         </div>
                         <div class="modal-body">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
@@ -235,16 +215,16 @@
                                 <br>
                                 <hr>
 
-                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_bank" >
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_group_package" >
   
                                     <thead>
                                         <tr> 
                                    
-                                            <th style="width:95%;">Nama Bank</th>
+                                            <th style="width:95%;">Group Package</th>
                                              
                                         </tr>
                                     </thead> 
-                                    <tbody id="daftar_bankx">
+                                    <tbody id="daftar_group_packagex">
 
                                 </tbody>
                                 </table> 
@@ -254,12 +234,12 @@
                 </div>
     </div>
 
-    <!-- modal cari posisi -->
-    <div class="modal fade" id="PilihPosisiModal" tabindex="-1" role="dialog">
+    <!-- modal cat service -->
+    <div class="modal fade" id="PilihCatServiceModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" > Pilih Posisi </h4>
+                            <h4 class="modal-title" > Pilih Category Service </h4>
                         </div>
                         <div class="modal-body">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
@@ -267,16 +247,113 @@
                                 <br>
                                 <hr>
 
-                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_posisi" >
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_catservice" >
   
                                     <thead>
                                         <tr> 
                                    
-                                            <th style="width:95%;">Posisi</th>
+                                            <th style="width:95%;">Category Service</th>
                                              
                                         </tr>
                                     </thead> 
-                                    <tbody id="daftar_posisix">
+                                    <tbody id="daftar_catservicex">
+
+                                </tbody>
+                                </table> 
+                       </div>
+                     
+                    </div>
+                </div>
+    </div>
+
+    <!-- modal visit type  -->
+    <div class="modal fade" id="PilihVisitTypeModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" > Pilih Visit Type </h4>
+                        </div>
+                        <div class="modal-body">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
+
+                                <br>
+                                <hr>
+
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_visit_type" >
+  
+                                    <thead>
+                                        <tr> 
+                                   
+                                            <th style="width:95%;"> Visit Type</th>
+                                             
+                                        </tr>
+                                    </thead> 
+                                    <tbody id="daftar_visit_typex">
+
+                                </tbody>
+                                </table> 
+                       </div>
+                     
+                    </div>
+                </div>
+    </div>
+
+    
+    <!-- modal visit revenue  -->
+    <div class="modal fade" id="PilihRevenueModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" > Pilih Revenue </h4>
+                        </div>
+                        <div class="modal-body">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
+
+                                <br>
+                                <hr>
+
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_revenue" >
+  
+                                    <thead>
+                                        <tr> 
+                                   
+                                            <th style="width:95%;"> Revenue</th>
+                                             
+                                        </tr>
+                                    </thead> 
+                                    <tbody id="daftar_revenuex">
+
+                                </tbody>
+                                </table> 
+                       </div>
+                     
+                    </div>
+                </div>
+    </div>
+
+    <!-- modal visit aggreement  -->
+    <div class="modal fade" id="PilihAggreementModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" > Pilih Revenue </h4>
+                        </div>
+                        <div class="modal-body">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
+
+                                <br>
+                                <hr>
+
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_revenue" >
+  
+                                    <thead>
+                                        <tr> 
+                                   
+                                            <th style="width:95%;"> Revenue</th>
+                                             
+                                        </tr>
+                                    </thead> 
+                                    <tbody id="daftar_revenuex">
 
                                 </tbody>
                                 </table> 
@@ -368,7 +445,7 @@
 		$("#defaultModal").modal('show');
  
 		$.ajax({
-			 url:"<?php echo base_url(); ?>instruktur/get_data_edit/"+id,
+			 url:"<?php echo base_url(); ?>package_service/get_data_edit/"+id,
 			 type:"GET",
 			 dataType:"JSON", 
 			 success:function(result){  
@@ -437,7 +514,7 @@
         {
         // ajax delete data to database
         $.ajax({
-            url : "<?php echo base_url('instruktur/hapus_data')?>/"+id,
+            url : "<?php echo base_url('package_service/hapus_data')?>/"+id,
             type: "GET",
             dataType: "JSON",
             success: function(data)
@@ -470,7 +547,7 @@
 		 var formData = new FormData($('#user_form')[0]); 
   
                  $.ajax({
-                 url:"<?php echo base_url(); ?>instruktur/simpan_data",
+                 url:"<?php echo base_url(); ?>package_service/simpan_data",
                  type:"POST",
                  data:formData,
                  contentType:false,  
@@ -526,7 +603,7 @@
  
 		  
 		$('#example').DataTable({ 
-			"ajax": "<?php echo base_url(); ?>instruktur/fetch_instruktur" 
+			"ajax": "<?php echo base_url(); ?>package_service/fetch_package_service" 
 		});
 
         $('.datepicker').bootstrapMaterialDatePicker({

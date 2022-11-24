@@ -11,11 +11,28 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 22/11/2022 09:21:31
+ Date: 24/11/2022 17:25:30
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for m_agreement
+-- ----------------------------
+DROP TABLE IF EXISTS `m_agreement`;
+CREATE TABLE `m_agreement`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `agreement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_agreement
+-- ----------------------------
+INSERT INTO `m_agreement` VALUES (1, 'Dues Term');
+INSERT INTO `m_agreement` VALUES (2, 'Personal Trainer');
+INSERT INTO `m_agreement` VALUES (3, 'Shoes Locker');
 
 -- ----------------------------
 -- Table structure for m_bank
@@ -26,13 +43,14 @@ CREATE TABLE `m_bank`  (
   `bank_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_bank
 -- ----------------------------
 INSERT INTO `m_bank` VALUES (5, 'BCA', 1);
 INSERT INTO `m_bank` VALUES (6, 'Mandiri', 1);
+INSERT INTO `m_bank` VALUES (7, 'BNI', 1);
 
 -- ----------------------------
 -- Table structure for m_barang
@@ -117,6 +135,23 @@ INSERT INTO `m_barang` VALUES (62, 'Map Dahana (Putih)', '3', '33', 161, 40, 'OR
 INSERT INTO `m_barang` VALUES (63, 'Map Dahana (Hitam)', '3', '33', 19, 61, '');
 
 -- ----------------------------
+-- Table structure for m_cat_service
+-- ----------------------------
+DROP TABLE IF EXISTS `m_cat_service`;
+CREATE TABLE `m_cat_service`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cat_service` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_cat_service
+-- ----------------------------
+INSERT INTO `m_cat_service` VALUES (1, 'Service');
+INSERT INTO `m_cat_service` VALUES (2, 'Administrasi');
+INSERT INTO `m_cat_service` VALUES (3, 'Transfer Member');
+
+-- ----------------------------
 -- Table structure for m_category_item
 -- ----------------------------
 DROP TABLE IF EXISTS `m_category_item`;
@@ -137,14 +172,26 @@ CREATE TABLE `m_category_item`  (
 DROP TABLE IF EXISTS `m_group_package`;
 CREATE TABLE `m_group_package`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `status` int NULL DEFAULT NULL,
+  `group_package` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_group_package
 -- ----------------------------
+INSERT INTO `m_group_package` VALUES (1, 'Private Instruktur');
+INSERT INTO `m_group_package` VALUES (2, 'Admin');
+INSERT INTO `m_group_package` VALUES (3, 'Muay Thai');
+INSERT INTO `m_group_package` VALUES (4, 'MMA');
+INSERT INTO `m_group_package` VALUES (5, 'Membership');
+INSERT INTO `m_group_package` VALUES (6, 'Boxing');
+INSERT INTO `m_group_package` VALUES (7, 'BJJ');
+INSERT INTO `m_group_package` VALUES (8, 'Gym');
+INSERT INTO `m_group_package` VALUES (9, 'Aerobic');
+INSERT INTO `m_group_package` VALUES (10, 'Cuti Member');
+INSERT INTO `m_group_package` VALUES (11, 'Transfer Member');
+INSERT INTO `m_group_package` VALUES (12, 'Sewa Shoe Loker');
+INSERT INTO `m_group_package` VALUES (13, 'Paket Gym Bulanan');
 
 -- ----------------------------
 -- Table structure for m_instansi
@@ -193,7 +240,7 @@ CREATE TABLE `m_instruktur`  (
 -- Records of m_instruktur
 -- ----------------------------
 INSERT INTO `m_instruktur` VALUES (1, 'Okki Setyawan', 'Bekasi', '087881724923', 'okkisetyawan@gmail.com', 'Jakarta', '2022-11-22', 'M', '2022-11-22', '827843523423', 5, '334522434', '14615859_1081513848635184_4183541886599049238_o.jpg', 3, 'P');
-INSERT INTO `m_instruktur` VALUES (2, 'JoniS ', 'BekasiS', '7456456465464', 'jon@mail.com', 'Jakarta', '2022-11-22', 'S', '2022-11-22', '25234324', 5, '2342', '14615859_1081513848635184_4183541886599049238_o.jpg', 5, 'W');
+INSERT INTO `m_instruktur` VALUES (2, 'JoniS sss', 'BekasiSoo', '99999999', 'josssn@mail.com', 'Jakartass', '2022-11-30', 'D', '2022-11-22', '77777777', 6, '555555', 'mobil.jpeg', 6, 'W');
 
 -- ----------------------------
 -- Table structure for m_item_unit
@@ -204,14 +251,33 @@ CREATE TABLE `m_item_unit`  (
   `unit_code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `remark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_item_unit
 -- ----------------------------
-INSERT INTO `m_item_unit` VALUES (5, 'Kg', '1');
-INSERT INTO `m_item_unit` VALUES (7, 'Bks', '');
-INSERT INTO `m_item_unit` VALUES (8, 'Btl', '');
+INSERT INTO `m_item_unit` VALUES (1, 'Bks', NULL);
+INSERT INTO `m_item_unit` VALUES (2, 'Botol', NULL);
+INSERT INTO `m_item_unit` VALUES (3, 'BUTIR', NULL);
+INSERT INTO `m_item_unit` VALUES (4, 'CAPS', NULL);
+INSERT INTO `m_item_unit` VALUES (5, 'Dus', NULL);
+INSERT INTO `m_item_unit` VALUES (6, 'grm', NULL);
+INSERT INTO `m_item_unit` VALUES (7, 'Kg', NULL);
+INSERT INTO `m_item_unit` VALUES (8, 'l', NULL);
+INSERT INTO `m_item_unit` VALUES (9, 'M ', NULL);
+INSERT INTO `m_item_unit` VALUES (10, 'Meter', NULL);
+INSERT INTO `m_item_unit` VALUES (11, 'ml', NULL);
+INSERT INTO `m_item_unit` VALUES (12, 'Pack', NULL);
+INSERT INTO `m_item_unit` VALUES (13, 'pcs', NULL);
+INSERT INTO `m_item_unit` VALUES (14, 'PP', NULL);
+INSERT INTO `m_item_unit` VALUES (15, 'pres', NULL);
+INSERT INTO `m_item_unit` VALUES (16, 'roll', NULL);
+INSERT INTO `m_item_unit` VALUES (17, 'S', NULL);
+INSERT INTO `m_item_unit` VALUES (18, 'Sct', NULL);
+INSERT INTO `m_item_unit` VALUES (19, 'SRV', NULL);
+INSERT INTO `m_item_unit` VALUES (20, 'UNIT', NULL);
+INSERT INTO `m_item_unit` VALUES (21, 'XL', NULL);
+INSERT INTO `m_item_unit` VALUES (22, 'XXL', NULL);
 
 -- ----------------------------
 -- Table structure for m_jabatan
@@ -326,7 +392,7 @@ CREATE TABLE `m_member`  (
   `place_dob` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `kodepos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_member
@@ -360,11 +426,15 @@ CREATE TABLE `m_member_type`  (
   `group_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_member_type
 -- ----------------------------
+INSERT INTO `m_member_type` VALUES (1, 'Dues Member CC', 'Dues', NULL);
+INSERT INTO `m_member_type` VALUES (2, 'Dues Members in Club', 'Dues', NULL);
+INSERT INTO `m_member_type` VALUES (3, 'Term One', 'Term', NULL);
+INSERT INTO `m_member_type` VALUES (4, 'Expat Term', 'Term', NULL);
 
 -- ----------------------------
 -- Table structure for m_package_service
@@ -375,20 +445,38 @@ CREATE TABLE `m_package_service`  (
   `package_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `remark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `id_group` int NULL DEFAULT NULL,
-  `category` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `type_package` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `id_cat_service` int NULL DEFAULT NULL,
+  `id_visit_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `qty` int NULL DEFAULT NULL,
   `price` int NULL DEFAULT NULL,
   `expire_package_day` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `acc_revenue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `agreement_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `durasi_pt` int NULL DEFAULT NULL,
+  `id_revenue` int NULL DEFAULT NULL,
+  `id_agreement` int NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_package_service
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for m_payment_type
+-- ----------------------------
+DROP TABLE IF EXISTS `m_payment_type`;
+CREATE TABLE `m_payment_type`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `payment_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_payment_type
+-- ----------------------------
+INSERT INTO `m_payment_type` VALUES (3, 'Debit');
+INSERT INTO `m_payment_type` VALUES (4, 'CC');
+INSERT INTO `m_payment_type` VALUES (5, 'Cash');
 
 -- ----------------------------
 -- Table structure for m_pegawai
@@ -411,7 +499,7 @@ CREATE TABLE `m_pegawai`  (
   `id_posisi` int NULL DEFAULT NULL,
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 102 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_pegawai
@@ -470,7 +558,7 @@ CREATE TABLE `m_posisi`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `posisi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_posisi
@@ -487,7 +575,7 @@ CREATE TABLE `m_posisi_trainer`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `posisi_trainer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_posisi_trainer
@@ -495,6 +583,27 @@ CREATE TABLE `m_posisi_trainer`  (
 INSERT INTO `m_posisi_trainer` VALUES (3, 'BodyShape');
 INSERT INTO `m_posisi_trainer` VALUES (5, 'Fat Loss');
 INSERT INTO `m_posisi_trainer` VALUES (6, 'Slim Body');
+
+-- ----------------------------
+-- Table structure for m_revenue
+-- ----------------------------
+DROP TABLE IF EXISTS `m_revenue`;
+CREATE TABLE `m_revenue`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `acc_revenue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_revenue
+-- ----------------------------
+INSERT INTO `m_revenue` VALUES (1, 'Pendapatan Zumba');
+INSERT INTO `m_revenue` VALUES (2, 'Pendapatan Muay Thai');
+INSERT INTO `m_revenue` VALUES (3, 'Pendapatan POS');
+INSERT INTO `m_revenue` VALUES (4, 'Pendapatan Registrasi');
+INSERT INTO `m_revenue` VALUES (5, 'Pendapatan PT');
+INSERT INTO `m_revenue` VALUES (6, 'Pendapatan Cuti Member');
+INSERT INTO `m_revenue` VALUES (7, 'Pendapatan Transfer Member');
 
 -- ----------------------------
 -- Table structure for m_room
@@ -603,6 +712,23 @@ INSERT INTO `m_user` VALUES (17, 'doni', 'YQ==', '', 3);
 INSERT INTO `m_user` VALUES (18, 'ridwan', 'YQ==', '', 4);
 INSERT INTO `m_user` VALUES (19, 'teguh', 'YQ==', '', 6);
 INSERT INTO `m_user` VALUES (20, 'fahmi', 'YQ==', '', 5);
+
+-- ----------------------------
+-- Table structure for m_visit_type
+-- ----------------------------
+DROP TABLE IF EXISTS `m_visit_type`;
+CREATE TABLE `m_visit_type`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `visit_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of m_visit_type
+-- ----------------------------
+INSERT INTO `m_visit_type` VALUES (1, 'Mingguan');
+INSERT INTO `m_visit_type` VALUES (2, 'Per Kedatangan');
+INSERT INTO `m_visit_type` VALUES (3, 'Bulanan');
 
 -- ----------------------------
 -- Table structure for t_pengeluaran
@@ -715,7 +841,7 @@ CREATE TABLE `t_work_order_detail`  (
   `id_peserta` int NULL DEFAULT NULL,
   `token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_work_order_detail

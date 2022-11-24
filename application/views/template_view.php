@@ -210,6 +210,30 @@
                                 </a>
                             </li> 
                             <li>
+                                <a href="<?php echo base_url('agreement'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Agreement</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('visit_type'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Visit Type</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('cat_service'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Category Service</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('revenue'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Revenue</span>
+                                </a>
+                            </li>  
+                            <li>
                                 <a href="<?php echo base_url('payment_type'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Payment Type</span>
@@ -224,7 +248,7 @@
                             <li>
                                 <a href="<?php echo base_url('package_service'); ?>">
                                 <i class="material-icons">dns</i>
-                                    <span>Paket Service</span>
+                                    <span>Package Service</span>
                                 </a>
                             </li> 
                             <li>
