@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 24/11/2022 17:25:30
+ Date: 24/11/2022 19:57:20
 */
 
 SET NAMES utf8mb4;
@@ -460,6 +460,7 @@ CREATE TABLE `m_package_service`  (
 -- ----------------------------
 -- Records of m_package_service
 -- ----------------------------
+INSERT INTO `m_package_service` VALUES (2, 'rrrr', 'qqqqq', 2, 1, '1', 2, 45555, '3', 2, 6, 2, NULL);
 
 -- ----------------------------
 -- Table structure for m_payment_type
@@ -590,7 +591,7 @@ INSERT INTO `m_posisi_trainer` VALUES (6, 'Slim Body');
 DROP TABLE IF EXISTS `m_revenue`;
 CREATE TABLE `m_revenue`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `acc_revenue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `revenue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 

@@ -22,10 +22,12 @@
 							   <table class="table table-bordered table-striped table-hover js-basic-example" id="example" >
 									<thead>
 										<tr> 
-											<th style="width:5%;">Nama</th>
-                                            <th style="width:5%;">Posisi</th>
-                                            <th style="width:5%;">Telp</th>
-                                            <th style="width:5%;">Alamat</th>                                           
+											<th style="width:5%;">Package Name</th>
+                                            <th style="width:5%;">Remark</th>
+                                            <th style="width:5%;">Group</th>
+                                            <th style="width:5%;">Category</th>     
+                                            <th style="width:5%;">Qty</th>     
+                                            <th style="width:5%;">Price</th>                                           
                                             <th style="width:10%;">Opsi</th> 
 										</tr>
 									</thead> 
@@ -56,7 +58,7 @@
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <label for=""> Package Name </label>
-                                                <input type="text" class="form-control" name="employee_name" id="employee_name">
+                                                <input type="text" class="form-control" name="package_name" id="package_name">
                                             </div>
                                         </div> 
                                     </div>
@@ -64,7 +66,7 @@
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <label for=""> Remark</label>
-                                                <input type="text" class="form-control" name="address" id="address">
+                                                <input type="text" class="form-control" name="remark" id="remark">
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +78,7 @@
                                                     <div class="form-line">
                                                         <label for="">Group Package</label>
                                                         <input type="text" name="nama_group" id="nama_group" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_group" id="id_group" required>
+                                                        <input type="text" name="id_group" id="id_group" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -88,8 +90,8 @@
                                         <div class="input-group">
                                                     <div class="form-line">
                                                         <label for="">Category Service</label>
-                                                        <input type="text" name="cat_service" id="cat_service" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_cat_service" id="id_cat_service" required>
+                                                        <input type="text" name="nama_cat_service" id="nama_cat_service" class="form-control" readonly="readonly" >
+                                                        <input type="text" name="id_cat_service" id="id_cat_service" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -104,8 +106,8 @@
                                         <div class="input-group">
                                                     <div class="form-line">
                                                         <label for="">Visit Type</label>
-                                                        <input type="text" name="visit_type" id="visit_type" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_visit_type" id="id_visit_type" required>
+                                                        <input type="text" name="nama_visit_type" id="nama_visit_type" class="form-control" readonly="readonly" >
+                                                        <input type="text" name="id_visit_type" id="id_visit_type" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -156,8 +158,8 @@
                                         <div class="input-group">
                                                     <div class="form-line">
                                                         <label for="">Revenue</label>
-                                                        <input type="text" name="revenue" id="revenue" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_revenue" id="id_revenue" required>
+                                                        <input type="text" name="nama_revenue" id="nama_revenue" class="form-control" readonly="readonly" >
+                                                        <input type="text" name="id_revenue" id="id_revenue" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -169,13 +171,13 @@
 
                                 
 
-                            <div class="row clearfix"> 
+                            <div class="row clearfix">  
                             <div class="col-sm-6">
                                         <div class="input-group">
                                                     <div class="form-line">
                                                         <label for="">Agreement</label>
-                                                        <input type="text" name="aggreement" id="aggreement" class="form-control" readonly="readonly" >
-                                                        <input type="hidden" name="id_aggreement" id="id_aggreement" required>
+                                                        <input type="text" name="nama_agreement" id="nama_agreement" class="form-control" readonly="readonly" >
+                                                        <input type="text" name="id_agreement" id="id_agreement" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -299,7 +301,7 @@
     </div>
 
     
-    <!-- modal visit revenue  -->
+    <!-- modal revenue  -->
     <div class="modal fade" id="PilihRevenueModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -331,12 +333,12 @@
                 </div>
     </div>
 
-    <!-- modal visit aggreement  -->
-    <div class="modal fade" id="PilihAggreementModal" tabindex="-1" role="dialog">
+    <!-- modal agreement  -->
+    <div class="modal fade" id="PilihAgreementModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" > Pilih Revenue </h4>
+                            <h4 class="modal-title" > Pilih Agreement </h4>
                         </div>
                         <div class="modal-body">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">X Tutup</button>
@@ -344,16 +346,16 @@
                                 <br>
                                 <hr>
 
-                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_revenue" >
+                                 <table width="100%" class="table table-bordered table-striped table-hover " id="daftar_agreement" >
   
                                     <thead>
                                         <tr> 
                                    
-                                            <th style="width:95%;"> Revenue</th>
+                                            <th style="width:95%;"> Agreement </th>
                                              
                                         </tr>
                                     </thead> 
-                                    <tbody id="daftar_revenuex">
+                                    <tbody id="daftar_agreementx">
 
                                 </tbody>
                                 </table> 
@@ -365,77 +367,105 @@
 
    
    <script type="text/javascript"> 
-    $("#priabtn").on("click",function(){
-        $("#gender").val('P');
-        $(this).attr('class','btn btn-primary');
-        $("#wanitabtn").attr('class','btn btn-default'); 
-    });
+    
 
-    $("#wanitabtn").on("click",function(){
-        $("#gender").val('W');
-        $(this).attr('class','btn btn-primary');
-        $("#priabtn").attr('class','btn btn-default'); 
-    });
-
-    $("#singlebtn").on("click",function(){
-        $("#marital_status").val('S');
-        $(this).attr('class','btn btn-primary');
-        $("#mariedbtn").attr('class','btn btn-default'); 
-        $("#divorcebtn").attr('class','btn btn-default'); 
-    });
-
-    $("#mariedbtn").on("click",function(){
-        $("#marital_status").val('M');
-        $(this).attr('class','btn btn-primary');
-        $("#divorcebtn").attr('class','btn btn-default'); 
-        $("#singlebtn").attr('class','btn btn-default'); 
-    });
-
-    $("#divorcebtn").on("click",function(){
-        $("#marital_status").val('D');
-        $(this).attr('class','btn btn-primary');
-        $("#mariedbtn").attr('class','btn btn-default'); 
-        $("#singlebtn").attr('class','btn btn-default'); 
-    });
-
-
+    // PilihGroupPackageModal
+    // PilihCatServiceModal
+    // PilihVisitTypeModal
+    // PilihRevenueModal
+    // PilihAggreementModal
      
-	function PilihBank(){
-        $("#PilihBankModal").modal({backdrop: 'static', keyboard: false,show:true});
+	function PilihGroupPackage(){
+        $("#PilihGroupPackageModal").modal({backdrop: 'static', keyboard: false,show:true});
     }
 
-    function PilihPosisi(){
-        $("#PilihPosisiModal").modal({backdrop: 'static', keyboard: false,show:true});
+    function PilihCatService(){
+        $("#PilihCatServiceModal").modal({backdrop: 'static', keyboard: false,show:true});
+    }
+
+    function PilihVisitType(){
+        $("#PilihVisitTypeModal").modal({backdrop: 'static', keyboard: false,show:true});
+    }
+
+    function PilihRevenue(){
+        $("#PilihRevenueModal").modal({backdrop: 'static', keyboard: false,show:true});
+    }
+
+    function PilihAgreement(){
+        $("#PilihAgreementModal").modal({backdrop: 'static', keyboard: false,show:true});
     }
  
-    $('#daftar_posisi').DataTable( {
-        "ajax": "<?php echo base_url(); ?>trainer_jbt/fetch_trainer_jbt" 
+    $('#daftar_group_package').DataTable( {
+        "ajax": "<?php echo base_url(); ?>group_package/fetch_group_package" 
     });
 
-    $('#daftar_bank').DataTable( {
-        "ajax": "<?php echo base_url(); ?>bank/fetch_bank" 
+    $('#daftar_catservice').DataTable( {
+        "ajax": "<?php echo base_url(); ?>cat_service/fetch_cat_service" 
+    });
+
+    $('#daftar_visit_type').DataTable( {
+        "ajax": "<?php echo base_url(); ?>visit_type/fetch_visit_type" 
+    });
+
+    $('#daftar_revenue').DataTable( {
+        "ajax": "<?php echo base_url(); ?>revenue/fetch_revenue" 
+    });
+
+    $('#daftar_agreement').DataTable( {
+        "ajax": "<?php echo base_url(); ?>agreement/fetch_agreement" 
     });
 
     
-    var daftar_posisi = $('#daftar_posisi').DataTable();
+    var daftar_group_package = $('#daftar_group_package').DataTable();
      
-        $('#daftar_posisi tbody').on('click', 'tr', function () {
+        $('#daftar_group_package tbody').on('click', 'tr', function () {
             
-            var content = daftar_posisi.row(this).data() 
-            $("#nama_posisi").val(content[0]);
-            $("#id_posisi").val(content[2]);
-            $("#PilihPosisiModal").modal('hide');
+            var content = daftar_group_package.row(this).data() 
+            $("#nama_group").val(content[0]);
+            $("#id_group").val(content[2]);
+            $("#PilihGroupPackageModal").modal('hide');
         } );
 
    
-    var daftar_bank = $('#daftar_bank').DataTable();
+    var daftar_catservice = $('#daftar_catservice').DataTable();
      
-     $('#daftar_bank tbody').on('click', 'tr', function () {
+     $('#daftar_catservice tbody').on('click', 'tr', function () {
          
-         var content = daftar_bank.row(this).data() 
-         $("#nama_bank").val(content[0]);
-         $("#id_bank").val(content[3]);
-         $("#PilihBankModal").modal('hide');
+         var content = daftar_catservice.row(this).data() 
+         $("#nama_cat_service").val(content[0]);
+         $("#id_cat_service").val(content[2]);
+         $("#PilihCatServiceModal").modal('hide');
+     } );
+
+     var daftar_visit_type = $('#daftar_visit_type').DataTable();
+     
+     $('#daftar_visit_type tbody').on('click', 'tr', function () {
+         
+         var content = daftar_visit_type.row(this).data() 
+         $("#nama_visit_type").val(content[0]);
+         $("#id_visit_type").val(content[2]);
+         $("#PilihVisitTypeModal").modal('hide');
+     } );
+
+     var daftar_revenue = $('#daftar_revenue').DataTable();
+     
+     $('#daftar_revenue tbody').on('click', 'tr', function () {
+         
+         var content = daftar_revenue.row(this).data() 
+         $("#nama_revenue").val(content[0]);
+         $("#id_revenue").val(content[2]);
+         $("#PilihRevenueModal").modal('hide');
+     } );
+
+
+     var daftar_agreement = $('#daftar_agreement').DataTable();
+     
+     $('#daftar_agreement tbody').on('click', 'tr', function () {
+         
+         var content = daftar_agreement.row(this).data() 
+         $("#nama_agreement").val(content[0]);
+         $("#id_agreement").val(content[2]);
+         $("#PilihAgreementModal").modal('hide');
      } );
 
     

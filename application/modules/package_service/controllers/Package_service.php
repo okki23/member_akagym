@@ -34,9 +34,12 @@ class Package_service extends Parent_Controller {
  
 	public function get_data_edit(){
 		$id = $this->uri->segment(3);
-		$qr = "select a.*,b.posisi_trainer,c.bank_name from m_package_service a 
-		left join m_posisi_trainer b on b.id = a.id_posisi
-		left join m_bank c on c.id = a.id_bank where a.id = '$id'";
+		$qr = "SELECT a.*,b.group_package,c.cat_service,d.visit_type,e.revenue,f.agreement FROM m_package_service a 
+		LEFT JOIN m_group_package b ON b.id = a.id_group
+		LEFT JOIN m_cat_service c ON c.id = a.id_cat_service
+		LEFT JOIN m_visit_type d ON d.id = a.id_visit_type
+		LEFT JOIN m_revenue e ON e.id = a.id_revenue
+		LEFT JOIN m_agreement f ON f.id = a.id_agreement where a.id = '$id'";
 		$sql = $this->db->query($qr)->row();
 		echo json_encode($sql,TRUE);
 	}
@@ -59,15 +62,11 @@ class Package_service extends Parent_Controller {
     
 		$data_form = $this->m_package_service->array_from_post($this->daftar_field);
 
-		$id = isset($data_form['id']) ? $data_form['id'] : NULL;  
-		$data_form['join_date'] = date('Y-m-d');
+		$id = isset($data_form['id']) ? $data_form['id'] : NULL;   
     	$simpan_data = $this->m_package_service->simpan_data($data_form,$this->nama_tabel,$this->primary_key,$id);
-		// echo $this->db->last_query();
-		// die();
-		$simpan_foto = $this->upload_foto();
-
+  
 		
-		if($simpan_data && $simpan_foto){
+		if($simpan_data){
 			$result = array("response"=>array('message'=>'success'));
 		}else{
 			$result = array("response"=>array('message'=>'failed'));
@@ -77,13 +76,6 @@ class Package_service extends Parent_Controller {
 
 	} 
 
-	function upload_foto(){  
-		if(isset($_FILES["user_image"])){  
-			$extension = explode('.', $_FILES['user_image']['name']);   
-			$destination = './upload/' . $_FILES['user_image']['name'];  
-			return move_uploaded_file($_FILES['user_image']['tmp_name'], $destination);  
-			 
-		}  
-	  }  
+ 
 
 }
