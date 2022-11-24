@@ -257,12 +257,12 @@
                                     <span>Member Type</span>
                                 </a>
                             </li> 
-                            <li>
+                            <!-- <li>
                                 <a href="<?php echo base_url('category_name'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Category Name</span>
                                 </a>
-                            </li> 
+                            </li>  -->
                             <li>
                                 <a href="<?php echo base_url('uom'); ?>">
                                 <i class="material-icons">dns</i>

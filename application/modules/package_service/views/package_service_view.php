@@ -78,7 +78,7 @@
                                                     <div class="form-line">
                                                         <label for="">Group Package</label>
                                                         <input type="text" name="nama_group" id="nama_group" class="form-control" readonly="readonly" >
-                                                        <input type="text" name="id_group" id="id_group" required>
+                                                        <input type="hidden" name="id_group" id="id_group" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -91,7 +91,7 @@
                                                     <div class="form-line">
                                                         <label for="">Category Service</label>
                                                         <input type="text" name="nama_cat_service" id="nama_cat_service" class="form-control" readonly="readonly" >
-                                                        <input type="text" name="id_cat_service" id="id_cat_service" required>
+                                                        <input type="hidden" name="id_cat_service" id="id_cat_service" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -107,7 +107,7 @@
                                                     <div class="form-line">
                                                         <label for="">Visit Type</label>
                                                         <input type="text" name="nama_visit_type" id="nama_visit_type" class="form-control" readonly="readonly" >
-                                                        <input type="text" name="id_visit_type" id="id_visit_type" required>
+                                                        <input type="hidden" name="id_visit_type" id="id_visit_type" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -159,7 +159,7 @@
                                                     <div class="form-line">
                                                         <label for="">Revenue</label>
                                                         <input type="text" name="nama_revenue" id="nama_revenue" class="form-control" readonly="readonly" >
-                                                        <input type="text" name="id_revenue" id="id_revenue" required>
+                                                        <input type="hidden" name="id_revenue" id="id_revenue" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -177,7 +177,7 @@
                                                     <div class="form-line">
                                                         <label for="">Agreement</label>
                                                         <input type="text" name="nama_agreement" id="nama_agreement" class="form-control" readonly="readonly" >
-                                                        <input type="text" name="id_agreement" id="id_agreement" required>
+                                                        <input type="hidden" name="id_agreement" id="id_agreement" required>
                                                         
                                                     </div>
                                                     <span class="input-group-addon">
@@ -366,14 +366,7 @@
     </div>
 
    
-   <script type="text/javascript"> 
-    
-
-    // PilihGroupPackageModal
-    // PilihCatServiceModal
-    // PilihVisitTypeModal
-    // PilihRevenueModal
-    // PilihAggreementModal
+   <script type="text/javascript">  
      
 	function PilihGroupPackage(){
         $("#PilihGroupPackageModal").modal({backdrop: 'static', keyboard: false,show:true});
@@ -479,57 +472,25 @@
 			 type:"GET",
 			 dataType:"JSON", 
 			 success:function(result){  
+ 
 				 $("#defaultModal").modal('show'); 
 				 $("#id").val(result.id);
-                 $("#nama").val(result.nama);
-                 $("#barcode_rfid").val(result.barcode_rfid);
-                 $("#title").val(result.title);
-                 $("#employee_name").val(result.employee_name);
-                 $("#gender").val(result.gender);
-                 $("#dob").val(result.dob); 
-                 $("#dob_place").val(result.dob_place); 
-                 $("#bank_account").val(result.bank_account); 
-                 $("#phone").val(result.phone);  
-                 $("#nama_marketing").val(result.marketing);  
-                 $("#nama_bank").val(result.bank_name);   
-                 $("#no_ktp").val(result.no_ktp); 
-                 $("#address").val(result.address);  
-                 $("#register_date").val(result.register_date);  
-                 $("#status").val(result.status); 
-                 $("#id_bank").val(result.id_bank); 
-                 $("#no_npwp").val(result.no_npwp); 
-                 $("#foto").val(result.foto); 
-                 $("#email").val(result.email); 
-                 $("#emergency_contact").val(result.emergency_contact); 
-                 $("#kodepos").val(result.kodepos); 
-        
-
-                $("#id_posisi").val(result.id_posisi); 
-                 $("#nama_posisi").val(result.posisi_trainer); 
-                 $("#marital_status").val(result.marital_status); 
-
-				 $('#image1').attr('src',"upload/"+result.foto);
-                 if(result.gender == 'P'){
-                    $("#priabtn").attr('class','btn btn-primary');
-                    $("#wanitatbn").attr('class','btn btn-default');
-                 }else{
-                    $("#wanitabtn").attr('class','btn btn-primary');
-                    $("#priabtn").attr('class','btn btn-default');
-                 }
-
-                 if(result.marital_status == 'S'){ 
-                    $("#singlebtn").attr('class','btn btn-primary'); 
-                    $("#mariedbtn").attr('class','btn btn-default'); 
-                    $("#divorcebtn").attr('class','btn btn-default'); 
-                 }else if(result.marital_status == 'D'){ 
-                    $("#singlebtn").attr('class','btn btn-default'); 
-                    $("#mariedbtn").attr('class','btn btn-default'); 
-                    $("#divorcebtn").attr('class','btn btn-primary'); 
-                 }else if(result.marital_status == 'M'){ 
-                    $("#singlebtn").attr('class','btn btn-default'); 
-                    $("#mariedbtn").attr('class','btn btn-primary'); 
-                    $("#divorcebtn").attr('class','btn btn-default'); 
-                 } 
+                 $("#package_name").val(result.package_name);
+                 $("#remark").val(result.remark);
+                 $("#nama_group").val(result.group_package);
+                 $("#id_group").val(result.id_group);
+                 $("#nama_cat_service").val(result.cat_service);
+                 $("#id_cat_service").val(result.id_cat_service); 
+                 $("#nama_visit_type").val(result.visit_type); 
+                 $("#id_visit_type").val(result.id_visit_type); 
+                 $("#nama_revenue").val(result.revenue);  
+                 $("#id_revenue").val(result.id_revenue);  
+                 $("#nama_agreement").val(result.agreement);   
+                 $("#id_agreement").val(result.id_agreement); 
+                 $("#price").val(result.price);  
+                 $("#expire_package_day").val(result.expire_package_day);
+                 $("#durasi_pt").val(result.durasi_pt); 
+                 $("#qty").val(result.qty); 
 			 }
 		 });
 	 }

@@ -117,12 +117,12 @@
   
                                     <thead>
                                         <tr>  
-                                            <th style="width:98%;">NIP </th> 
                                             <th style="width:98%;">Nama </th> 
+                                            <th style="width:98%;">Jabatan </th> 
                                          </tr>
                                           
                                     </thead> 
-                                    <tbody id="daftar_karyawan">
+                                    <tbody id="daftar_karyawanx">
 
                                 </tbody>
                                 </table> 
@@ -161,8 +161,8 @@
          
          var content = daftar_karyawan.row(this).data()
          console.log(content);
-         $("#nama_pegawai").val(content[1]);
-         $("#id_pegawai").val(content[4]);
+         $("#nama_pegawai").val(content[0]);
+         $("#id_pegawai").val(content[5]);
          $("#CariKaryawanModal").modal('hide');
      } );
        

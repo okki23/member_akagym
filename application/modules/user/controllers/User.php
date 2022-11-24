@@ -35,8 +35,9 @@ class User extends Parent_Controller {
 	 
 	public function get_data_edit(){
 		$id = $this->uri->segment(3); 
-		$get = $this->db->query("select a.*,b.nama from m_user a
-		left join m_pegawai b on b.id = a.id_pegawai WHERE a.id = '".$id."' ")->row();
+		$get = $this->db->query("
+		SELECT a.*,b.employee_name FROM m_user a
+		LEFT JOIN m_pegawai b ON b.id = a.id_pegawai WHERE a.id = '".$id."' ")->row();
 		echo json_encode($get,TRUE);
 	}
 	

@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 24/11/2022 19:57:20
+ Date: 24/11/2022 20:33:17
 */
 
 SET NAMES utf8mb4;
@@ -709,10 +709,10 @@ CREATE TABLE `m_user`  (
 INSERT INTO `m_user` VALUES (1, 'admin', 'YQ==', '99', 1);
 INSERT INTO `m_user` VALUES (7, 'okki', 'YQ==', '2', 1);
 INSERT INTO `m_user` VALUES (9, 'nia', 'YQ==', '99', 2);
-INSERT INTO `m_user` VALUES (17, 'doni', 'YQ==', '', 3);
-INSERT INTO `m_user` VALUES (18, 'ridwan', 'YQ==', '', 4);
-INSERT INTO `m_user` VALUES (19, 'teguh', 'YQ==', '', 6);
-INSERT INTO `m_user` VALUES (20, 'fahmi', 'YQ==', '', 5);
+INSERT INTO `m_user` VALUES (17, 'doni', 'YQ==', '', 2);
+INSERT INTO `m_user` VALUES (18, 'ridwan', 'YQ==', '', 2);
+INSERT INTO `m_user` VALUES (19, 'teguh', 'YQ==', '', 2);
+INSERT INTO `m_user` VALUES (20, 'fahmi', 'YQ==', '', 2);
 
 -- ----------------------------
 -- Table structure for m_visit_type
