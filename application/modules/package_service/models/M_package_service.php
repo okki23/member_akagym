@@ -31,7 +31,7 @@ class M_package_service extends Parent_Model {
                 $sub_array[] = $row->group_package; 
                 $sub_array[] = $row->cat_service;  
                 $sub_array[] = $row->qty;  
-                $sub_array[] = $row->price;  
+                $sub_array[] = 'Rp. '.number_format($row->price,0);  
                 $sub_array[] = '
                 <a href="javascript:void(0)" class="btn btn-warning btn-xs waves-effect" id="edit" onclick="Ubah_Data('.$row->id.');" > <i class="material-icons">create</i> Ubah </a>  &nbsp; 
                 <a href="javascript:void(0)" id="delete" class="btn btn-danger btn-xs waves-effect" onclick="Hapus_Data('.$row->id.');" > <i class="material-icons">delete</i> Hapus </a>  &nbsp;';  

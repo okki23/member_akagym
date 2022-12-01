@@ -209,8 +209,13 @@
                                     <thead>
                                         <tr> 
                                    
-                                            <th style="width:95%;"> Service </th>
-                                             
+                                            <th style="width:50%;"> Service </th>
+                                            <th style="width:50%;"> Remark </th>
+                                            <th style="width:50%;"> Group Package </th>
+                                            <th style="width:50%;"> Kategori </th>
+                                            <th style="width:50%;"> Qty </th>
+                                            <th style="width:50%;"> Price </th>
+                                           
                                         </tr>
                                     </thead> 
                                     <tbody id="daftar_servicex">
