@@ -284,7 +284,7 @@
                         </a>
                         <ul class="ml-menu"> 
                             <li>
-                                <a href="<?php echo base_url('work_order'); ?>">
+                                <a href="<?php echo base_url('pos'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Point Of Sale</span>
                                 </a>
@@ -293,6 +293,12 @@
                                 <a href="<?php echo base_url('work_order'); ?>">
                                 <i class="material-icons">dns</i>
                                     <span>Closing Transaksi</span>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="<?php echo base_url('attendance'); ?>">
+                                <i class="material-icons">dns</i>
+                                    <span>Attendance Member</span>
                                 </a>
                             </li>  
                         </ul>

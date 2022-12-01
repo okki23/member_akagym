@@ -35,7 +35,8 @@ class M_member extends Parent_Model {
                 $sub_array[] = $row->address;  
                 $sub_array[] = '
                 <a href="javascript:void(0)" class="btn btn-warning btn-xs waves-effect" id="edit" onclick="Ubah_Data('.$row->id.');" > <i class="material-icons">create</i> Ubah </a>  &nbsp; 
-                <a href="javascript:void(0)" id="delete" class="btn btn-danger btn-xs waves-effect" onclick="Hapus_Data('.$row->id.');" > <i class="material-icons">delete</i> Hapus </a>  &nbsp;';  
+                <a href="javascript:void(0)" id="delete" class="btn btn-danger btn-xs waves-effect" onclick="Hapus_Data('.$row->id.');" > <i class="material-icons">delete</i> Hapus </a>  &nbsp;
+                <a href="javascript:void(0)" id="delete" class="btn btn-success btn-xs waves-effect" onclick="Cetak_Kartu('.$row->id.');" > <i class="material-icons">credit_card</i> Cetak Kartu </a>  &nbsp;';  
                 $sub_array[] = $row->id; 
                 $data[] = $sub_array;  
                 $no++;
