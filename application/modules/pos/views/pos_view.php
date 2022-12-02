@@ -15,13 +15,18 @@
                             <br>
                             
 
-
+ 
 
                         <table class="table table-bordered">
                             <tr>
+                                <td style="width: 20%;"> Nomor Transaksi</td>
+                                <td style="width: 2%;"> : </td>
+                                <td style="width: 78%;"> DE13213</td>
+                            </tr>
+                            <tr>
                                 <td style="width: 20%;"> Member</td>
                                 <td style="width: 2%;"> : </td>
-                                <td style="width: 78%;"> <p id="nama_membernya"></p>
+                                <td style="width: 78%;"> <p id="nama_membernya" style="font-weight:bold; font-size:18px;"></p>
                                     <!-- <input type="text" name="nama_member" id="nama_member"> -->
                                     <input type="hidden" name="id_member" id="id_member">
                                      
@@ -55,18 +60,18 @@
                         <div class="body">
                          
                         <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
+            <table class="table table-hover" id="cart">
+                <thead >
+                    <tr >
+                        <th class="text-center">Product</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-left">Price (Rp)</th>
                         <th class="text-center">Total</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td class="col-sm-8 col-md-6">
                         <div class="media">
                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
@@ -105,36 +110,25 @@
                         <button type="button" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remove
                         </button></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                    </tr>
+                    </tr> -->
+                </tbody>
+            </table>
+            <table>
+                    
+                   
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                        <td class="text-right"><h3>  <strong class="total">  </strong>  </h3></td>
                     </tr>
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
+                        </td>
                         <td>
                         <button type="button" class="btn btn-success">
                             Checkout <span class="glyphicon glyphicon-play"></span>
@@ -262,9 +256,52 @@
      
      $('#daftar_service tbody').on('click', 'tr', function () {
          
-         var content = daftar_service.row(this).data()   
-         $("#id_serv").val(content[5]);
-         $("#nama_membernya").html(content[0])
-         $("#PilihMemberModal").modal('hide');
-     } );
+        var content = daftar_service.row(this).data()    
+        $("#cart > tbody").append('<tr align="center"> <td> <p style="font-weight:bold; font-size:16px;"> '+content[0]+'</p> </td>  <td> <input type="hidden" id="hiprice" value="'+content[5]+'">  <input type="text" style="width:20%;" class="form-control qty" onkeyup="Calc()"> </td> <td> <strong class="price"> '+content[5]+' </strong>  </td> </p> <td> <strong class="subtotal"> </strong>  </td> <td> <button type="button"  class="btn btn-danger removecart"> <i class="material-icons">cancel</i>   Hapus </button> </td>  </tr>');
+        $("#PilihServiceModal").modal('hide');
+
+   
+     });
+
+        $("#cart").on('click','.removecart',function(){
+            $(this).parent().parent().remove();
+        });
+
+        // $(".qty").on('keyup',function(){
+        //     console.log($(this).val());
+        // });
+
+        // $('.qty').change(function () {
+        //     alert("Changed!");
+        // });
+        
+        // $('.qty').keyup(function(){
+        //     console.log($(this).val());
+        // });
+
+        function Calc(){
+             
+
+            var selector = $(this).closest("tr"); //get closest tr
+            // var price = parseInt(selector.find('.price').text()); //get price
+            var price = parseFloat($('#hiprice').val());
+            var qty = parseFloat($('.qty').val());
+            var subtotal =  qty*price;
+
+            console.log(qty*price);
+            $("#rez").val(subtotal);
+            selector.find('.subtotal').html(subtotal); //add total in same row
+            var result = 0;
+            //loop through total column
+            $("tr .subtotal").each(function() {
+                //check if the text is not ""
+                result += ($(this).text().trim() != "") ? parseInt($(this).text()) : 0
+            })
+            //add result inside subtotal
+            $(".total").text(result)
+
+        }
+       
+        
+        
     </script>

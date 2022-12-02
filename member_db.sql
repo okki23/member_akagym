@@ -11,7 +11,7 @@
  Target Server Version : 80030
  File Encoding         : 65001
 
- Date: 01/12/2022 08:10:57
+ Date: 02/12/2022 08:07:15
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,7 @@ CREATE TABLE `m_agreement`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `agreement` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_agreement
@@ -65,7 +65,7 @@ CREATE TABLE `m_barang`  (
   `qty_jkt` int NULL DEFAULT NULL,
   `keterangan` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_barang
@@ -142,7 +142,7 @@ CREATE TABLE `m_cat_service`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `cat_service` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_cat_service
@@ -160,7 +160,7 @@ CREATE TABLE `m_category_item`  (
   `category_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_category_item
@@ -174,7 +174,7 @@ CREATE TABLE `m_group_package`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `group_package` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_group_package
@@ -234,7 +234,7 @@ CREATE TABLE `m_instruktur`  (
   `id_posisi` int NULL DEFAULT NULL,
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_instruktur
@@ -251,7 +251,7 @@ CREATE TABLE `m_item_unit`  (
   `unit_code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `remark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_item_unit
@@ -287,7 +287,7 @@ CREATE TABLE `m_jabatan`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `nama_jabatan` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_jabatan
@@ -304,7 +304,7 @@ CREATE TABLE `m_kategori`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `nama_kategori` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_kategori
@@ -321,7 +321,7 @@ CREATE TABLE `m_kategori_instansi`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `nama_kategori_instansi` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_kategori_instansi
@@ -410,7 +410,7 @@ CREATE TABLE `m_member_group`  (
   `discount` int NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_member_group
@@ -426,7 +426,7 @@ CREATE TABLE `m_member_type`  (
   `group_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_member_type
@@ -455,77 +455,77 @@ CREATE TABLE `m_package_service`  (
   `id_agreement` int NULL DEFAULT NULL,
   `status` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_package_service
 -- ----------------------------
-INSERT INTO `m_package_service` VALUES (3, 'POS 5 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (4, 'POS 10 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (5, 'POS 20 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (6, 'POS 30 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (7, 'PT REGULER ONE 5 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (8, 'PT REGULER ONE 10 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (9, 'PT REGULER ONE 20 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (10, 'PT REGULER ONE 30 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (11, 'PT REGULER ONE 50 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (12, 'PT GOLD ONE 5 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (13, 'PT GOLD ONE 10 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (14, 'PT GOLD ONE 20 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (15, 'PT GOLD ONE 30 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (16, 'PT GOLD ONE 50 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (17, 'PT GOLD 1 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (18, 'PT GOLD 5 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (19, 'PT GOLD 10 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (20, 'PT PLATINUM 1 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (21, 'PT PLATINUM 5 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (22, 'PT PLATINUM 10 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (23, 'PT GOLD 20 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (24, 'PT PLATINUM 20 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (25, 'PT GOLD 30 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (26, 'PT PLATINUM 30 SESI', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (27, 'PT PLATINUM 20+1 SESI ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (28, 'PT GOLD 30 SS NEW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (29, 'FREE ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (30, 'ADMIN 30', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (31, 'ADMIN 50', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (32, 'Admin 150', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (33, 'Admin 100', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (34, 'Admin 75', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (35, 'Membership 1 bln 350', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (36, 'Membership 1 bln 250', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (37, 'Membership 1 bln 325', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (38, 'Membership 1 bln 270', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (39, 'Membership 2 bln ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (40, 'Membership 2 bln 225', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (41, 'Membership 2 bln 300', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (42, 'Membership 3 bln 300', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (43, 'Membership 3 bln 200', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (44, 'Membership 3 bln 275', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (45, 'Membership 3 bln 750', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (46, 'Membership 6+1 1600', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (47, 'Membership 6+1 1500', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (48, 'Membership 6 bln 275', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (49, 'Membership 6 bln 1260', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (50, 'Membership 12+2 bln 3000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (51, 'Membership 12+2 bln 2100', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (52, 'Membership 12 bln', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (53, 'Membership 24 bln', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (54, 'VISITOR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (55, 'Membership 1 bln 300', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (56, 'Membership 6+1 bln 1400', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (57, 'Membership 8+1 bln 1700', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (58, 'Membership 12+2 bln 2300', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (59, 'Membership 1 bln 275', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (60, 'Membership 3 bln 1050', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (61, 'Membership 12+2 bln', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (62, 'FREE MEMBER 1 BLN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (63, '3 BULAN NEW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (64, 'MEMBERSHIP 1 BLN NEW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (65, 'MEMBERSHIP 6+1 BULAN 1500', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (66, 'Membership 8+1 bulan 1800', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (67, 'MEMBERSHIP 1 BULAN 400', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `m_package_service` VALUES (68, 'CUTI MEMBER', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (3, 'POS 5 SESI', NULL, NULL, NULL, NULL, NULL, 1500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (4, 'POS 10 SESI', NULL, NULL, NULL, NULL, NULL, 2750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (5, 'POS 20 SESI', NULL, NULL, NULL, NULL, NULL, 5000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (6, 'POS 30 SESI', NULL, NULL, NULL, NULL, NULL, 6750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (7, 'PT REGULER ONE 5 SESI', NULL, NULL, NULL, NULL, NULL, 1875000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (8, 'PT REGULER ONE 10 SESI', NULL, NULL, NULL, NULL, NULL, 3500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (9, 'PT REGULER ONE 20 SESI', NULL, NULL, NULL, NULL, NULL, 6500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (10, 'PT REGULER ONE 30 SESI', NULL, NULL, NULL, NULL, NULL, 9000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (11, 'PT REGULER ONE 50 SESI', NULL, NULL, NULL, NULL, NULL, 13750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (12, 'PT GOLD ONE 5 SESI', NULL, NULL, NULL, NULL, NULL, 2750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (13, 'PT GOLD ONE 10 SESI', NULL, NULL, NULL, NULL, NULL, 5000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (14, 'PT GOLD ONE 20 SESI', NULL, NULL, NULL, NULL, NULL, 8000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (15, 'PT GOLD ONE 30 SESI', NULL, NULL, NULL, NULL, NULL, 10500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (16, 'PT GOLD ONE 50 SESI', NULL, NULL, NULL, NULL, NULL, 15000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (17, 'PT GOLD 1 SESI', NULL, NULL, NULL, NULL, NULL, 200000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (18, 'PT GOLD 5 SESI', NULL, NULL, NULL, NULL, NULL, 1000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (19, 'PT GOLD 10 SESI', NULL, NULL, NULL, NULL, NULL, 2000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (20, 'PT PLATINUM 1 SESI', NULL, NULL, NULL, NULL, NULL, 300000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (21, 'PT PLATINUM 5 SESI', NULL, NULL, NULL, NULL, NULL, 1500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (22, 'PT PLATINUM 10 SESI', NULL, NULL, NULL, NULL, NULL, 2700000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (23, 'PT GOLD 20 SESI', NULL, NULL, NULL, NULL, NULL, 3500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (24, 'PT PLATINUM 20 SESI', NULL, NULL, NULL, NULL, NULL, 4200000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (25, 'PT GOLD 30 SESI', NULL, NULL, NULL, NULL, NULL, 4500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (26, 'PT PLATINUM 30 SESI', NULL, NULL, NULL, NULL, NULL, 5700000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (27, 'PT PLATINUM 20+1 SESI ', NULL, NULL, NULL, NULL, NULL, 4200000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (28, 'PT GOLD 30 SS NEW', NULL, NULL, NULL, NULL, NULL, 4700000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (29, 'FREE ', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (30, 'ADMIN 30', NULL, NULL, NULL, NULL, NULL, 30000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (31, 'ADMIN 50', NULL, NULL, NULL, NULL, NULL, 50000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (32, 'Admin 150', NULL, NULL, NULL, NULL, NULL, 150000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (33, 'Admin 100', NULL, NULL, NULL, NULL, NULL, 100000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (34, 'Admin 75', NULL, NULL, NULL, NULL, NULL, 75000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (35, 'Membership 1 bln 350', NULL, NULL, NULL, NULL, NULL, 350000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (36, 'Membership 1 bln 250', NULL, NULL, NULL, NULL, NULL, 250000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (37, 'Membership 1 bln 325', NULL, NULL, NULL, NULL, NULL, 325000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (38, 'Membership 1 bln 270', NULL, NULL, NULL, NULL, NULL, 270000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (39, 'Membership 2 bln ', NULL, NULL, NULL, NULL, NULL, 750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (40, 'Membership 2 bln 225', NULL, NULL, NULL, NULL, NULL, 450000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (41, 'Membership 2 bln 300', NULL, NULL, NULL, NULL, NULL, 600000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (42, 'Membership 3 bln 300', NULL, NULL, NULL, NULL, NULL, 900000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (43, 'Membership 3 bln 200', NULL, NULL, NULL, NULL, NULL, 600000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (44, 'Membership 3 bln 275', NULL, NULL, NULL, NULL, NULL, 825000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (45, 'Membership 3 bln 750', NULL, NULL, NULL, NULL, NULL, 750000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (46, 'Membership 6+1 1600', NULL, NULL, NULL, NULL, NULL, 1600000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (47, 'Membership 6+1 1500', NULL, NULL, NULL, NULL, NULL, 1500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (48, 'Membership 6 bln 275', NULL, NULL, NULL, NULL, NULL, 1650000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (49, 'Membership 6 bln 1260', NULL, NULL, NULL, NULL, NULL, 1260000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (50, 'Membership 12+2 bln 3000', NULL, NULL, NULL, NULL, NULL, 3000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (51, 'Membership 12+2 bln 2100', NULL, NULL, NULL, NULL, NULL, 2100000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (52, 'Membership 12 bln', NULL, NULL, NULL, NULL, NULL, 2700000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (53, 'Membership 24 bln', NULL, NULL, NULL, NULL, NULL, 5000000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (54, 'VISITOR', NULL, NULL, NULL, NULL, NULL, 75000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (55, 'Membership 1 bln 300', NULL, NULL, NULL, NULL, NULL, 300000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (56, 'Membership 6+1 bln 1400', NULL, NULL, NULL, NULL, NULL, 1400000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (57, 'Membership 8+1 bln 1700', NULL, NULL, NULL, NULL, NULL, 1700000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (58, 'Membership 12+2 bln 2300', NULL, NULL, NULL, NULL, NULL, 2300000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (59, 'Membership 1 bln 275', NULL, NULL, NULL, NULL, NULL, 275000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (60, 'Membership 3 bln 1050', NULL, NULL, NULL, NULL, NULL, 1050000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (61, 'Membership 12+2 bln', NULL, NULL, NULL, NULL, NULL, 2560000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (62, 'FREE MEMBER 1 BLN', NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (63, '3 BULAN NEW', NULL, NULL, NULL, NULL, NULL, 1047000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (64, 'MEMBERSHIP 1 BLN NEW', NULL, NULL, NULL, NULL, NULL, 450000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (65, 'MEMBERSHIP 6+1 BULAN 1500', NULL, NULL, NULL, NULL, NULL, 1500000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (66, 'Membership 8+1 bulan 1800', NULL, NULL, NULL, NULL, NULL, 1800000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (67, 'MEMBERSHIP 1 BULAN 400', NULL, NULL, NULL, NULL, NULL, 400000, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `m_package_service` VALUES (68, 'CUTI MEMBER', NULL, NULL, NULL, NULL, NULL, 50000, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for m_payment_type
@@ -535,7 +535,7 @@ CREATE TABLE `m_payment_type`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `payment_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_payment_type
@@ -565,7 +565,7 @@ CREATE TABLE `m_pegawai`  (
   `id_posisi` int NULL DEFAULT NULL,
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_pegawai
@@ -585,7 +585,7 @@ CREATE TABLE `m_period`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `period` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_period
@@ -607,7 +607,7 @@ CREATE TABLE `m_peserta`  (
   `telp` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_peserta
@@ -646,7 +646,7 @@ CREATE TABLE `m_posisi_trainer`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `posisi_trainer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_posisi_trainer
@@ -663,7 +663,7 @@ CREATE TABLE `m_revenue`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `revenue` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_revenue
@@ -721,7 +721,7 @@ CREATE TABLE `m_sub_kategori`  (
   `id_kategori` int NULL DEFAULT NULL,
   `nama_sub_kategori` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of m_sub_kategori
@@ -792,7 +792,7 @@ CREATE TABLE `m_visit_type`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `visit_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of m_visit_type
@@ -800,6 +800,25 @@ CREATE TABLE `m_visit_type`  (
 INSERT INTO `m_visit_type` VALUES (1, 'Mingguan');
 INSERT INTO `m_visit_type` VALUES (2, 'Per Kedatangan');
 INSERT INTO `m_visit_type` VALUES (3, 'Bulanan');
+
+-- ----------------------------
+-- Table structure for t_active_package
+-- ----------------------------
+DROP TABLE IF EXISTS `t_active_package`;
+CREATE TABLE `t_active_package`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_member` int NULL DEFAULT NULL,
+  `id_package` int NULL DEFAULT NULL,
+  `start_date` date NULL DEFAULT NULL,
+  `end_date` date NULL DEFAULT NULL,
+  `session` int NULL DEFAULT NULL,
+  `package_buy` date NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_active_package
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_pengeluaran
@@ -813,7 +832,7 @@ CREATE TABLE `t_pengeluaran`  (
   `id_pegawai` int NULL DEFAULT NULL,
   `date_assign` date NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 155 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 157 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_pengeluaran
@@ -833,7 +852,7 @@ CREATE TABLE `t_pengeluaran_detail`  (
   `source` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `keterangan` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_pengeluaran_detail
@@ -859,6 +878,22 @@ CREATE TABLE `t_pertemuan`  (
 
 -- ----------------------------
 -- Records of t_pertemuan
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for t_pos
+-- ----------------------------
+DROP TABLE IF EXISTS `t_pos`;
+CREATE TABLE `t_pos`  (
+  `id` int NOT NULL,
+  `no_transaction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `id_member` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `id_marketing` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_pos
 -- ----------------------------
 
 -- ----------------------------
@@ -912,7 +947,7 @@ CREATE TABLE `t_work_order_detail`  (
   `id_peserta` int NULL DEFAULT NULL,
   `token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_work_order_detail
